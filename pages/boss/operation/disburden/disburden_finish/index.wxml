@@ -1,0 +1,73 @@
+<!--pages/boss/operation/disburden/disburden_finish/index.wxml-->
+<wxs module="filters" src="../../../../../utils/filter.wxs"></wxs>
+<view class='bg_f7f7f7 min_height100'>
+
+  <view class='headerBox width_100 broder_bottomColor_cdcdcd clearfix'>
+    <scroll-view class='tabBox margin_lr30 fl' scroll-x='true' scroll-into-view='id{{task.index}}' scroll-with-animation="true" bindscrolltolower='refreshListData' data-scroll='taskData'>
+      <view class='connentBox clearfix' style='width:{{connentBoxWidth}}px'>
+        <view class='tabItem fs_24 text_center fl {{item.active ? "text_41a0fe broder_bottomColor_41a0fe": ""}}' wx:for="{{task.list}}" wx:key="key" id='id{{index}}' data-state='{{index}}_{{item.active}}' bindtap='bindTabTask'>{{item.cussupName}}</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class='cneterContentBox margin_lr30'>
+    <view class='centerHeadBox fs_24'>
+      <view class='fr text_333333 padding_tb20'>供应商：{{task.list[task.index].cussupName}}</view>
+    </view>
+    <view class='cneterContainerBox'>
+
+      <view class='fs_24'>
+        <scroll-view scroll-y class='tableListScroll' bindscrolltolower='refreshListData' data-scroll='varietyList' style='height:{{tableTrListHeight}}'>
+          <view class='table shadow_e2e2e2 margin_b30' wx:for="{{task.itemData.varietyDetails}}" wx:key="key">
+            <view class='tr tableHead'>
+              <view class='th colspan' style='flex:3;align-items: left;'>{{item.name}}</view>
+            </view>
+            <view class='tr text_666666'>
+              <view class='td width_150rpx' style='flex:0.7'>规格</view>
+              <view class='td width_100' style='flex:1.1'>
+              单价/元
+              <image src='../../../../../images/icon_edit.png' class='icon_edit margin_l15' bindtap='bindEditInput' data-unedit='{{item.unEdit}}' data-index='{{index}}'></image>
+              </view>
+              <view class='td width_100' style='flex:1.1'>数量/箱</view>
+              <view class='td width_100' style='flex:1.1'>小计/元</view>
+            </view>
+
+            <view class='tr text_666666' wx:for="{{item.item}}" wx:for-item='itemL' wx:key='key' wx:for-index="lItemIndex">
+              <view class='td width_150rpx' style='flex:0.7'>{{itemL.programname}}</view>
+              <view class='td width_100' style='flex:1.1'>
+                <!-- <input type='digit' value='{{itemL.price}}' class='text_center' disabled='{{itemL.unEdit}}'  bindinput='bindUpdateValue' focus='{{!itemL.unEdit}}' data-dataindex='{{index}}' data-litemindex='{{index}}'></input> -->
+                <input type='digit' value='{{itemL.price}}' class='text_center' disabled='{{itemL.unEdit}}'  bindinput='bindUpdateValue' focus='{{lItemIndex == 0 ? !itemL.unEdit : ""}}' data-dataindex='{{index}}' data-litemindex='{{lItemIndex}}'></input>
+              </view>
+              
+              <view class='td width_100' style='flex:1.1'>{{itemL.sumVal}}</view>
+              <view class='td width_100' style='flex:1.1'>{{filters.toFix(itemL.price * itemL.sumVal,2)}}</view>
+            </view>
+          </view>
+
+          <view class='table shadow_e2e2e2 margin_b30' wx:if="{{task.itemData.varietyDetails.length != 0}}">
+            <view class='tr tableHead'>
+              <view class='th index' style='flex:0.5'>合计(元)</view>
+              <view class='th width_100' style='flex:1.25'>预警</view>
+              <view class='th width_100' style='flex:1.25'>总数</view>
+            </view>
+            <view class='tr text_666666'>
+              <view class='td' style='flex:0.5'>{{filters.toFix(task.itemData.totalData.sumPrice,2)}}</view>
+              <view class='td width_100' style='flex:1.25'>{{task.itemData.totalData.alert}}箱</view>
+              <view class='td width_100' style='flex:1.25'>{{task.itemData.totalData.total}}箱</view>
+            </view>
+          </view>
+
+          <nodata wx:if="{{noData}}"></nodata>
+          
+        </scroll-view>
+      </view>
+
+    </view>
+  </view>
+  
+  <view class='footerBox margin_lr30 clearfix'>
+    <view class='btn_wechat clearfix text_fff text_center broder_radius6 fs_36 btnPrintVoucher' bindtap='bindFinish' wx:if="{{task.list[task.index].status != 2}}">确认结束</view>
+    <view class='btn_wechat clearfix text_fff text_center broder_radius6 fs_36 btnPrintVoucher' bindtap='bindToPrintVoucher' wx:if="{{task.list[task.index].status == 2}}">打印凭证</view>
+  </view>
+
+</view>

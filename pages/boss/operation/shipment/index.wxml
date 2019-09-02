@@ -1,0 +1,51 @@
+<!--pages/boss/operation/shipment/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+
+  <view class='headerBox width_100 broder_bottomColor_cdcdcd clearfix'>
+    <scroll-view class='tabBox margin_lr30 fl' scroll-x scroll-into-view='id{{task.index}}' scroll-with-animation="true" bindscrolltolower='refreshListData' data-scroll='taskData' >
+      <view class='connentBox clearfix' style='width:{{connentBoxWidth}}px'>
+        <view class='tabItem fs_24 text_center fl {{item.active ? "text_41a0fe broder_bottomColor_41a0fe": ""}}' wx:for="{{task.list}}" wx:key="key" data-state='{{index}}_{{item.active}}' id='id{{index}}' bindtap='bindTabTask'>
+        {{item.cussupName != null ? item.cussupName : '任务' + item.name}}</view>
+      </view>
+    </scroll-view>
+    <view class='cancelTask margin_lr30 fs_24 fr text_41a0fe' bindtap='bindCancelCurrentTask'>取消出货</view>
+  </view>
+
+  <view class='cneterContentBox margin_lr30'>
+    <view class='centerHeadBox fs_24'>
+      <view class='fl text_333333'>合作商：{{task.list[task.index].cussupName}}</view>
+    </view>
+    <view class='cneterContainerBox'>
+
+      <view class='table shadow_e2e2e2'>
+        <view class='tr tableHead'>
+          <view class='th indexWidth'>序号</view>
+          <view class='th width_230rpx'>品种</view>
+          <view class='th width_150rpx'>标记</view>
+          <view class='th width_150rpx'>实重</view>
+          <view class='th btnRemove'>操作</view>
+        </view>
+        <scroll-view scroll-y class='tableListScroll' bindscrolltolower='refreshListData' data-scroll='taskItemData' style='height:{{tableTrListHeight}}'>
+          <nodata wx:if="{{task.noData}}"></nodata>
+          <view class='tr' wx:for="{{task.itemData}}" wx:key="key">
+            <view class='td index indexWidth'>{{index+1}}</view>
+            <view class='td width_230rpx'>{{item.categoryName}}</view>
+            <view class='td width_150rpx'>{{item.marker}}</view>
+            <view class='td width_150rpx'>{{item.weight}}</view>
+            <view class='td btnRemove text_41a0fe' bindtap='bindRemoveGoods' data-goodsindex='{{index}}'>移除</view>
+          </view>
+        </scroll-view>
+      </view>
+
+    </view>
+  </view>
+  <view class='height_50 loadingBox flex vertical_center'>
+    <list-loadindg isShow="{{isShow}}"></list-loadindg>
+  </view>
+  
+  <view class='footerBox margin_lr30 clearfix'>
+    <!-- <view class='alertNumber text_right fs_24 text_333333'>预警：2箱</view> -->
+    <view class='bg_f66b6e clearfix text_fff text_center broder_radius6 fs_36 btnShipmentEnd' bindtap='bindToShipmentFinish'>出货结束</view>
+  </view>
+
+</view>

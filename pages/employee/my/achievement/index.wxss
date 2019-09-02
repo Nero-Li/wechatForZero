@@ -1,0 +1,59 @@
+/* pages/employee/my/achievement/index.wxss */
+@import "../../../common/global.wxss";
+.myBox{
+  padding: 40rpx 0 20rpx 0; 
+}
+.headerBox{
+  height: 184rpx;
+}
+.headerItem{
+  padding: 27rpx 30rpx 0 30rpx;
+}
+.headPortrait,.headPortrait image{
+  width: 130rpx;
+  height: 130rpx;
+}
+.userNamePhone{
+  line-height: 40rpx;
+}
+.userNamePhone text{
+  max-width: 330rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.perfectInformationBox{
+  line-height: 40rpx;
+}
+.historyBox{
+  margin-right: 130rpx;
+}
+.leftListBox{
+  flex: 1;
+}
+.rightListBox{
+  flex: 2;
+}
+.rightListBox view{
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.infoListItemBox{
+  height: 100rpx;
+}
+.infoList{
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.achievementItem{
+  height: 52rpx;
+  line-height: 52rpx;
+}
+.achievementItem .block:first-child{
+  flex:0.55
+}
+.achievementItem .block{
+  flex:1.25
+}

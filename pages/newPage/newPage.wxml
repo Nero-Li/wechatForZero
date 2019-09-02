@@ -1,0 +1,20 @@
+<!--pages/newPage/newPage.wxml-->
+<view>
+  <view class='btnLogoutBox'>
+    <view class='btn_wechat clearfix text_fff text_center broder_radius6 fs_28 btnLogout' bindtap='bindLogout'>退出登录</view>
+  </view>
+  <view class='bottom'>
+    <button type="primary" bindtap="startBluetoothDevicesDiscovery">刷新</button>
+  </view>
+  <view class="list">
+    <view class="item" wx:for="{{ nearBluetoothList }}" wx:key="{{ index }}">
+      <view>
+        <text class='name'>{{item.name}}</text>
+      </view>
+      <view>
+        <button class='btn' size='mini' type="primary" bindtap='conect' data-item="{{item}}">连接设备</button>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view>重量：{{weight}}</view> -->

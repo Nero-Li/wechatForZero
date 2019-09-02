@@ -1,0 +1,20 @@
+<!--pages/role_selection/index.wxml-->
+<view class='bg'>
+
+ <text class='text_fff fs_48 inline_block width_100 text_center padding_t200'>请选择身份</text>
+
+ <navigator url="../common/information/perfect/index?role=0" class='rolebox'>
+   <view class='broder_radius20 flex items_center bg_283444 role'>
+    <image src='../../images/role/icon_employee.png' class='iconRole'></image>
+    <text class='text_fff fs_48 roleText'>我是员工</text>
+  </view>
+</navigator>
+
+ <navigator url="../common/information/perfect/index?role=1" class='rolebox'>
+   <view class='broder_radius20 flex items_center bg_283444 role'>
+    <image src='../../images/role/icon_boss.png' class='iconRole'></image>
+    <text class='text_fff fs_48 roleText'>我是老板</text>
+  </view>
+</navigator>
+
+</view>

@@ -1,0 +1,33 @@
+<!--pages/login/index.wxml-->
+<view class='bg'>
+
+ <text class='text_fff fs_48 inline_block width_100 text_center padding_t100'>欢迎登录十之谷后台</text>
+
+  <view class='margin_lr70 margin_t45 flex vertical_center'>
+    <view class='wecomeLogo'>
+      <image src='../../images/logo.png'></image>
+    </view>
+  </view>
+
+ <view>
+ <!-- <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"> -->
+   <button class='text_fff fs_46 broder_radius100 btn_wechat margin_lr30 margin_t45 flex vertical_center btnWeChatLogin' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+   <image src='../../images/icon_wechat.png'></image>
+   微信登录
+   </button>
+</view>
+
+<!-- <view class='margin_lr30 otherLoginBox'>
+  <view class='flex vertical_center otherLoginLine'>
+    <image src='../../images/icon_otherLoginLine.png'></image>
+    <text class='text_5a697c fs_24 text_center'>其他登录方式</text>
+    <image src='../../images/icon_otherLoginLine.png' class='rotate_180deg'></image>
+  </view>
+  <view class='therLoginIcon width_33 text_center' bindtap='bindAccountLogin'>
+    <image src='../../images/icon_user.png'></image>
+    <text class='text_748599 fs_28 block'>账号登录</text>
+  </view>
+</view> -->
+
+</view>
+

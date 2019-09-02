@@ -1,0 +1,10 @@
+/* pages/common/information/perfect/index.wxss */
+@import '../../global.wxss';
+
+ .wordLH{
+   line-height: 76rpx;white-space:nowrap;
+ }
+ .btnNext{
+   height: 90rpx;
+   line-height: 90rpx;
+ }

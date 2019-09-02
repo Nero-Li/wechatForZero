@@ -1,0 +1,66 @@
+/* pages/boss/operation/disburden/classify/index.wxss */
+@import "../../../../common/global.wxss";
+@import "../../../../common/table.wxss";
+
+.headerBox{
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.tabBox{
+  width: 410rpx;
+}
+.tabBox ::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.cussupName{
+  padding:0 5rpx;
+  margin:auto;
+}
+.tabItem{
+  padding: 0 15rpx;
+  height: 70rpx;
+}
+.connentBox{
+  width: 370rpx;
+}
+.modalContent{
+  min-height: 70rpx;
+  max-height: 280rpx;
+}
+.modalContent view{
+  width: 165rpx;height: 50rpx;line-height: 50rpx;
+  margin: 0 20rpx 20rpx 0;
+}
+.modalContent view:last-child{
+  margin: 0 20rpx 0 0;
+}
+.chooseProgramme{
+  width: 160rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  margin: 20rpx;
+}
+
+.centerHeadBox{
+  height: 82rpx;
+  line-height: 82rpx;
+}
+.centerHeadBox .cussupNameW{
+  width: 80%;
+}
+.tableListScroll{
+  height: 880rpx;
+}
+
+.alertNumber{
+  height: 30rpx;
+  line-height: 30rpx;
+}
+.btnUloadingEnd{
+  width: 325rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 20rpx auto;
+}

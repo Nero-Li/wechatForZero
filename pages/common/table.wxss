@@ -1,0 +1,57 @@
+.table {
+  border: 1rpx solid #d2d2d4;
+  border-right: 0;
+  border-bottom: 0;
+  width: 99.6%;
+  font-size: 12px;
+}
+.tr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.tr:nth-child(odd){
+  background: #ffffff
+}
+.tr:nth-child(even){
+  background: #f4f4f4
+}
+.th, .td {
+  min-height: 50rpx;
+  line-height: 50rpx;
+  display: flex;
+  /* flex:1; */
+  border-bottom: 1rpx solid #d2d2d4;
+  border-right: 1rpx solid #d2d2d4;
+  justify-content: center;
+  align-items: center;
+  word-break:break-all;
+  padding: 0 10rpx;
+  text-align: justify;
+  /* width: 100%; */
+}
+.indexWidth{
+  width: 75rpx;
+}
+.th {
+  font-weight: 400;
+  background-color: #e0e3f6;
+  color: #666;
+}
+
+/* 合并单元格 colspan（跨列）和rowspan（跨行） */
+.colspan{
+  flex-direction: column;
+}
+.rowspan{
+  flex-direction: row;
+}
+
+/* 序号 */
+.index{
+  color: #666 !important;
+}
+
+.padding_0{
+  padding: 0;
+}

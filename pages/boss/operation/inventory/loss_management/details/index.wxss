@@ -1,0 +1,21 @@
+/* pages/boss/operation/inventory/loss_management/details/index.wxss */
+@import "../../../../../common/global.wxss";
+@import "../../../../../common/table.wxss";
+
+.listHead {
+  margin-top: 30rpx;
+  width: 150rpx;
+  line-height: 48rpx;
+}
+.recoveryBox .table .td,.shipmentBox .table .td{
+  width: 100%
+}
+.recoveryBox .tr:nth-child(even),.shipmentBox .tr:nth-child(even){
+  background: #ffffff
+}
+.recoveryBox .tr:nth-child(odd),.shipmentBox .tr:nth-child(odd){
+  background: #f4f4f4
+}
+.lossReason{
+  margin: 20rpx 0 100rpx 0;
+}

@@ -1,0 +1,94 @@
+/* pages/employee/loss/after_sale/index.wxss */
+@import "../../../common/global.wxss";
+
+.tabHeaderBox{
+  position: relative;
+  width: 100%;
+  height: 96rpx;
+}
+.tabHeader{
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 96rpx;
+  border-bottom: 1px solid #eee;
+}
+.tabNav{
+  margin: 0 30rpx;
+}
+.tabNav view{
+  flex: 1;
+  text-align: center;
+  line-height: 96rpx;
+  color: #333;
+}
+.tabActive{
+  font-weight: 600;
+  border-bottom: 2px solid #333;
+}
+.listDataBox{
+  margin: 30rpx;
+}
+.listItem{
+  height: 300rpx;
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+.listTitle{
+  height: 66rpx;
+  line-height: 66rpx;
+  border-bottom: 1px solid #eee;
+}
+.listTitle .fl{
+  color: #333;
+  font-weight: 600;
+  width: 60%;
+}
+.listTitle .fr{
+  width: 35%;
+  color: #666;
+}
+.listConnet{
+  margin: 20rpx 0;
+}
+.textNmae{
+  width: 400rpx;
+}
+.imageBox{
+  width: 120rpx;
+  height: 120rpx;
+}
+.listConnet image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.listFooter view{
+  width: 160rpx;
+  height: 50rpx;
+  line-height: 48rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.btnStartSale{
+  border: 1px solid #00aaff;
+  color: #00aaff;
+  background: #fff;
+}
+.btnSaling{
+  border: 1px solid #00aaff;
+  color: #fff;
+  background: #00aaff;
+}
+.btnSaled{
+  border: 1px solid #878787;
+  color: #666;
+  background: #fff;
+}
+.goodsNoClass{
+  width: 350rpx !important;
+  height:60rpx !important;
+  line-height:60rpx !important;
+  text-align: left !important;
+}

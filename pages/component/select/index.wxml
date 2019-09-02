@@ -1,0 +1,18 @@
+<!--pages/component/select/index.wxml-->
+<view class='com-selectBox fs_24'>
+  <view class='com-sContent' bindtap='selectToggle'>
+    <view class='com-sTxt' data-selected="{{ nowText == '' ? (parentArray.length > 0 ? parentArray[parentIndex].name + '/' + propArray[propIndex].name : propArray[propIndex].name) : nowText}}">{{ nowText == '' ? (parentArray.length > 0 ? parentArray[parentIndex].name + '/' + propArray[propIndex].name : propArray[propIndex].name) : nowText}}</view>
+    <image src='../../../images/icon_arrows.png'  class='com-sImg rotate_90deg icon_arrows'  animation="{{animationData}}"></image>
+  </view>
+  <scroll-view class='com-sList' wx:if="{{selectShow && selectType == 1 && propArray.length != 0}}" scroll-y bindscrolltolower='bindScrollTolower' data-name='childrenlist' data-scroll='aloneselect'>
+      <view wx:for="{{propArray}}" data-index="{{index}}" data-id='' wx:key='' class='com-sItem {{selectIndex === -1 ? (propIndex == index ? "text_41a0fe" : "") : (selectIndex == index ? "text_41a0fe" : "")}}' bindtap='setText'>{{item.name}}</view>
+  </scroll-view>
+  <view class='com-sList_type2' wx:if="{{selectShow && selectType == 2 && parentArray.length != 0 }}">
+      <scroll-view class='ListType2item fl'  scroll-y bindscrolltolower='bindScrollTolower' data-name='parentlist' data-scroll='moreselect'>
+        <view wx:for="{{parentArray}}" data-index="{{index}}"  wx:key='' data-id='' class='com-sItem {{type2FristIndex === 0 ? (parentIndex == index ? "text_41a0fe" : "") : (type2FristIndex == index ? "text_41a0fe" : "")}}' bindtap='setText' data-select='1'>{{item.name}}</view>
+      </scroll-view>
+      <scroll-view class='ListType2item fl'  scroll-y bindscrolltolower='bindScrollTolower' data-name='childrenlist' data-scroll='moreselect'>
+        <view wx:for="{{propArray}}" data-index="{{index}}" wx:key='' class='com-sItem {{selectIndex === -1 ? (propIndex == index ? "text_41a0fe" : "") : (selectIndex == index ? "text_41a0fe" : "")}}' data-select='2' bindtap='setText'>{{item.name}}</view>
+      </scroll-view>
+  </view>
+</view>

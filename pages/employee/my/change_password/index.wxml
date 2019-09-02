@@ -1,0 +1,27 @@
+<!--pages/boss/my/change_password/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+  <view class='myBox'>
+    <view class='centerBox'>
+      <view class='shadow_e2e2e2 bg_ffffff infoListItemBox'>
+        <view class='margin_lr30 fs_28 text_333333 infoList clearfix padding_t20'>
+          <view class='fl'>原密码：</view>
+          <input type='password' class='fl margin_l15' placeholder='请输入原始密码'></input>
+        </view>
+      </view>
+      <view class='shadow_e2e2e2 margin_t30 bg_ffffff infoListItemBox'>
+        <view class='margin_lr30 fs_28 text_333333 infoList clearfix padding_t20'>
+          <view class='fl'>新密码：</view>
+          <input type='password' class='fl margin_l15' placeholder='请输入新密码'></input>
+        </view>
+      </view>
+      <view class='shadow_e2e2e2 margin_t30 bg_ffffff infoListItemBox'>
+        <view class='margin_lr30 fs_28 text_333333 infoList clearfix padding_t20'>
+          <view class='fl'>确认新密码：</view>
+          <input type='password' class='fl margin_l15' placeholder='请确认新密码'></input>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class='height_88 btn_wechat text_fff text_center fs_36 margin_lr30 broder_radius10 btnSaveBox'>确定</view>
+</view>

@@ -1,0 +1,63 @@
+<!--pages/employee/loss/after_sale/details/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+
+  <scroll-view scroll-y style='height:{{listBoxHeight}}px'>
+    <view class='listBox margin_lr30 fs_28'>
+      <view class='listHead text_center text_41a0fe fs_36'>报损订单信息</view>
+      <!-- <text class='fs_22 text_f66b6e block'>>>最近订单日期:2019-04-22</text> -->
+      <view class='table clear shadow_e2e2e2'>
+        <view class='tr tableHead'>
+          <view class='th colspan bg_f66b6e text_fff' style='flex:6;align-items: left;'>
+            <view class='clearfix width_100'>
+              <view class='fl'>{{lossList.categoryname}}</view>
+              <view class='fr'>{{lossList.goodsNo}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='reportLossBox'>
+          <view class='tr'>
+            <view class='td bg_ffffff'>标记</view>
+            <view class='td bg_ffffff'>实重</view>
+            <view class='td bg_ffffff'>数量</view>
+            <view class='td bg_ffffff'>合作商</view>
+          </view>
+          <view class='tr'>
+            <view class='td'>{{lossList.marker}}</view>
+            <view class='td'>{{lossList.weight}}</view>
+            <view class='td'>1</view>
+            <view class='td'>{{lossList.customername}}</view>
+          </view>
+          <!-- <scroll-view scroll-y bindscrolltolower='refreshListData' class='tableListBox'>
+            <view class='tr' wx:for="{{lossList.list}}" wx:for-item="lItem" wx:key="key">
+              <view class='td'>{{lItem.sign}}</view>
+              <view class='td'>{{lItem.weight}}</view>
+              <view class='td'>{{lItem.number}}</view>
+              <view class='td'>{{lItem.from}}</view>
+            </view>
+          </scroll-view> -->
+        </view>
+      </view>
+
+      <view class='margin_lr30'>
+        <view class='margin_t35 searchBox'>
+          <input type='text' class='text_fff fs_28 bg_283444 height_74 broder_radius10  broder_color_455469 padding_l5 padding_r100' placeholder='请输入自损原因' placeholder-class='text_fff text_center searchInputP' value='{{reasonValue}}' bindinput='bindreasonChange' maxlength="30"></input>
+          <view class='btnVoiceSearch flex vertical_center'>
+          </view>
+        </view>
+        
+        <view class=' margin_t10 reasonListBox'>
+          <text class='text_fff block fs_24 width_100 text_center broder_radius6 wordLH' wx:for="{{reasonList.list}}" wx:key="key" data-text='{{item.text}}' bindtap='bindGetReason'>{{item.text}}</text>
+        </view>
+      </view>
+
+      <!-- <view class='height_50 padding_tb20 loadingBox flex vertical_center'>
+        <list-loadindg isShow="{{isShow}}"></list-loadindg>
+      </view> -->
+
+    </view>
+  </scroll-view>
+
+  <view class='footerBox margin_lr30 clearfix'>
+    <view class='btn_wechat clearfix text_fff text_center broder_radius6 fs_46 btnLossBox' data-reason='{{reasonValue}}' bindtap='bindBtnLoss'>完成售后</view>
+  </view>
+</view>

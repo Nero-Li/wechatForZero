@@ -1,0 +1,24 @@
+<!--pages/common/information/store_address/index.wxml-->
+<view class='bg'>
+
+ <text class='text_fff fs_48 inline_block width_100 text_center padding_t200'>请选择您的门店</text>
+
+  <view class='margin_lr60 margin_t80'>
+
+    <view class='margin_t35 searchBox'>
+      <input type='text' class='text_fff fs_28 bg_283444 height_74 broder_radius10  broder_color_455469 padding_l5 padding_r100' placeholder='找不到？试试搜索吧！' placeholder-class='text_fff text_center searchInputP' value='{{adressValue}}' bindinput='bindadressChange' maxlength="50" bindconfirm='storeListData'></input>
+      <view class='btnVoiceSearch flex vertical_center'>
+        <image src='../../../../images/icon_voiceSearch.png' class=''></image>
+      </view>
+    </view>
+    
+    <scroll-view class=' margin_t10 storeListBox' scroll-y bindscrolltolower='loadMoreList'>
+      <text class='text_fff block fs_24 width_100 text_center broder_radius6 wordLH' wx:for="{{storeList}}" wx:key="key" bindtap='bindgetChooseAdress' data-address='{{item.address}}' data-shopid='{{item.id}}'>{{item.name}}</text>
+    </scroll-view>
+
+  </view>
+  <!-- <view class='height_50 loadingBox flex vertical_center'>
+    <list-loadindg isShow="{{isShowMoreLoading}}"></list-loadindg>
+  </view> -->
+
+</view>

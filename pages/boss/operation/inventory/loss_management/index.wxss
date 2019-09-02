@@ -1,0 +1,27 @@
+/* pages/boss/operation/inventory/loss_management/index.wxss */
+@import "../../../../common/global.wxss";
+.BillItem{
+  height: 100rpx;
+}
+.BillItem .itemCommonBox:nth-child(1){
+  width: 25%;
+  height: 70rpx;
+}
+.BillItem .itemCommonBox:nth-child(2),.BillItem .itemCommonBox:nth-child(3){
+  width: 35%;
+  height: 70rpx;
+  border-right:0;
+}
+.BillItem .itemCommonBox:nth-child(4){
+  width: 7.5%;
+}
+.btnOnClick{
+  /* width: 50rpx; */
+  height: 83rpx;
+  line-height: 28rpx;
+  padding: 10rpx;
+  /* writing-mode:tb-rl; */
+  /* text-align: left; */
+  border: 0;
+  border-radius: 0;
+}

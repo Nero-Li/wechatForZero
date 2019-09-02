@@ -1,0 +1,42 @@
+<!--pages/boss/my/store_management/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+  <view class='myBox'>
+    <view class='centerBox'>
+      <view class='shadow_e2e2e2 bg_ffffff infoListItemBox'>
+        <view class='margin_lr30 fs_28 text_333333 infoList clearfix padding_t20'>
+          <view class='fl width_100rpx'>省份：</view>
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{provincesArr}}" data-picker='province'>
+            <view class='fl pickerStoreBox'>
+              <input type='text' class='fl'  value='{{choosedProvince}}' disabled='true'></input>
+              <image src='../../../../images/icon_arrows.png' class='icon_arrows margin_l15 fr rotate_90deg'></image>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='shadow_e2e2e2 margin_t30 bg_ffffff infoListItemBox'>
+        <view class='margin_lr30 fs_28 text_333333 infoList clearfix padding_t20'>
+          <view class='fl width_100rpx'>市区：</view>
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{addLossArr}}" data-picker='city'>
+            <view class='fl pickerStoreBox'>
+              <input type='text' class='fl'  value='{{phone}}' disabled='true'></input>
+              <image src='../../../../images/icon_arrows.png' class='icon_arrows margin_l15 fr rotate_90deg'></image>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='shadow_e2e2e2 margin_t30 bg_ffffff infoListItemBox'>
+        <view class='margin_lr30 fs_28 text_333333 infoList clearfix padding_t20'>
+          <view class='fl width_100rpx'>商家：</view>
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{addLossArr}}">
+            <view class='fl pickerStoreBox'>
+              <input type='text' class='fl'  value='{{phone}}' disabled='true'></input>
+              <image src='../../../../images/icon_arrows.png' class='icon_arrows margin_l15 fr rotate_90deg'></image>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class='height_88 btn_wechat text_fff text_center fs_36 margin_lr30 broder_radius10 btnSaveBox'>确定</view>
+</view>

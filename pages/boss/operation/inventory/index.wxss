@@ -1,0 +1,66 @@
+/* pages/boss/operation/inventory/index.wxss */
+@import "../../../common/global.wxss";
+
+.chartItem{
+  height: 480rpx;
+}
+.chartItemBox{
+  padding: 0 30rpx;
+  width:auto;
+}
+.chartHeaderBox{
+  position: relative;
+}
+.chartBtnBox{
+  position: absolute;
+  /* top: 0; */
+  right: 0;
+}
+.btnLossManagement{
+  width: 120rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.btnAdd{
+  width: 60rpx;
+  height: 40rpx;
+  line-height: 36rpx;
+}
+.chooseLossBox{
+  position: absolute;
+  top: 90rpx;
+  right: 30rpx;
+  width: 180rpx;
+  height: 100rpx;
+  background: #34445b;
+  z-index: 10;
+}
+.chooseLossBox view{
+  height: 50rpx;
+  line-height: 50rpx;
+  border-bottom: 1rpx solid #fff;
+}
+.chooseLossBox view image{
+  width: 37rpx;
+  height: 35rpx;
+}
+.listItemBox{
+  height: 90rpx;
+}
+.listItemBox image{
+  width: 8rpx;
+  height: 15rpx;
+}
+.listItem{
+  height: 32rpx;
+  line-height: 32rpx;
+  padding-top: 30rpx;
+}
+.bgColorBox{
+  width: 75rpx;
+  margin: auto 20rpx;
+}
+.bgColor{
+  width: 50rpx;
+  height: 32rpx;
+}

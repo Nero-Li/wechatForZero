@@ -1,0 +1,36 @@
+<!--pages/common/information/perfect/index.wxml-->
+<view class='bg'>
+
+ <text class='text_fff fs_48 inline_block width_100 text_center padding_t200'>请完善您的信息</text>
+
+  <form>
+    <view class='margin_lr70 margin_t80'>
+
+      <view class='flex margin_t35'>
+        <text class='text_fff fs_36 width_535 text_right wordLH'>姓名：</text>
+        <input type='text' class='text_fff fs_28 bg_283444 height_74 broder_radius10  broder_color_455469 width_100 padding_lr5 margin_l30' value='{{userInfo.name}}' bindinput='bindChangeValue' data-input='name'></input>
+      </view>
+      
+      <view class='flex margin_t35'>
+        <text class='text_fff fs_36 width_535 text_right wordLH'>电话：</text>
+        <input type='text' class='text_fff fs_28 bg_283444 height_74 broder_radius10  broder_color_455469 width_100 padding_lr5 margin_l30' value='{{userInfo.phone}}' bindinput='bindChangeValue' data-input='phone'></input>
+      </view>
+
+      <!-- <view class='flex margin_t35'>
+        <text class='text_fff fs_36 width_535 text_right wordLH'>身份证：</text>
+        <input type='text' class='text_fff fs_28 bg_283444 height_74 broder_radius10  broder_color_455469 width_100 padding_lr5 margin_l30' value='{{userInfo.cardID}}' bindinput='' data-input='cardid'></input>
+      </view> -->
+
+      <view class='flex margin_t35'>
+        <text class='text_fff fs_36 width_535 text_right wordLH'>门店地址：</text>
+        <view type='text' class='text_fff fs_28 bg_283444 height_74 broder_radius10  broder_color_455469 width_100 padding_lr5 margin_l30 wordLH ' bindtap='toStoreAddress'>{{userInfo.storeAddress}}</view>
+      </view>
+
+    </view>
+  </form>
+
+ <view bindtap="bindNext">
+   <button class='text_fff fs_46 broder_radius10 btnbg_409efe margin_lr30 margin_t70 btnNext'>下一步</button>
+</view>
+
+</view>

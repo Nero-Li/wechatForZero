@@ -1,0 +1,13 @@
+<!--pages/employee/loss/after_sale/details/scan/index.wxml-->
+<view class='bg_f7f7f7 min_height100 flex vertical_center'>
+  <view>
+    <view class='qrcodeBox' bindtap='bindToBarCode'>
+      <view class='borderLeftTop'></view>
+      <view class='borderRightTop'></view>
+      <view class='borderLeftBottom'></view>
+      <view class='borderRightBottom'></view>
+      <canvas style="width: 180px;height: 180px;background:#f1f1f1;" class='Qrcode' canvas-id="canvasQrcode" />
+    </view>
+    <view class='text_center text_333333 fs_28 margin_tb20' >将二维码/条形码放入框内，即可自动扫描</view>
+  </view>
+</view>

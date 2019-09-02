@@ -1,0 +1,33 @@
+<!--pages/common/information/check/index.wxml-->
+<!--pages/common/information/perfect/index.wxml-->
+<view class='bg'>
+
+ <text class='text_fff fs_48 inline_block width_100 text_center padding_t200'>请核对您提交的信息</text>
+
+  <form>
+    <view class='margin_lr70 margin_t80'>
+
+      <view class='flex margin_t35'>
+        <text class='text_fff fs_36 width_535 text_right wordLH'>姓名：</text>
+        <input type='text' class='text_fff fs_28 bg_283444 height_74 broder_radius10  broder_color_455469 width_100 padding_lr5 margin_l30' disabled='disabled' value='{{userInfo.name}}'></input>
+      </view>
+      
+      <view class='flex margin_t35'>
+        <text class='text_fff fs_36 width_535 text_right wordLH'>电话：</text>
+        <input type='text' class='text_fff fs_28 bg_283444 height_74 broder_radius10  broder_color_455469 width_100 padding_lr5 margin_l30' disabled='disabled'  value='{{userInfo.phone}}'></input>
+      </view>
+
+      <view class='flex margin_t35'>
+        <text class='text_fff fs_36 width_535 text_right wordLH'>门店地址：</text>
+        <input type='text' class='text_fff fs_28 bg_283444 height_74 broder_radius10  broder_color_455469 width_100 padding_lr5 margin_l30' disabled='disabled' value='{{userInfo.storeAddress}}'></input>
+      </view>
+
+    </view>
+  </form>
+
+ <view bindtap='bindSubmit'>
+   <button class='text_fff fs_46 broder_radius10 btnbg_409efe margin_lr30 margin_t70 btnSubmit'>提交</button>
+  </view>
+
+</view>
+

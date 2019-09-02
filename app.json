@@ -1,0 +1,90 @@
+{
+  "pages": [
+    "pages/employee/loss/after_sale/index",
+    "pages/login/index",
+    "pages/login/account/index",
+    "pages/role_selection/index",
+    "pages/common/information/perfect/index",
+    "pages/common/information/check/index",
+    "pages/common/information/store_address/index",
+    "pages/boss/index/index",
+    "pages/boss/operation/index",
+    "pages/boss/my/index",
+    "pages/boss/operation/shipment/index",
+    "pages/boss/bill/index",
+    "pages/boss/operation/disburden/index",
+    "pages/boss/operation/inventory/index",
+    "pages/boss/operation/disburden/classify/index",
+    "pages/boss/operation/disburden/disburden_finish/index",
+    "pages/boss/operation/shipment/shipment_finish/index",
+    "pages/boss/operation/inventory/list/index",
+    "pages/boss/operation/inventory/loss_management/index",
+    "pages/boss/operation/inventory/loss_management/details/index",
+    "pages/boss/my/perfect_information/index",
+    "pages/boss/my/change_password/index",
+    "pages/boss/my/store_management/index",
+    "pages/boss/operation/inventory/list/details/index",
+    "pages/boss/bill/details/index",
+    "pages/boss/operation/inventory/scan/index",
+    "pages/boss/operation/inventory/code_query/index",
+    "pages/boss/operation/inventory/scan/barcode/index",
+    "pages/employee/index/index",
+    "pages/employee/my/perfect_information/index",
+    "pages/employee/my/change_password/index",
+    "pages/employee/my/store_management/index",
+    "pages/employee/my/achievement/index",
+    "pages/employee/loss/self_destruction/index",
+    
+    "pages/employee/loss/self_destruction/details/index",
+    "pages/employee/loss/after_sale/details/index",
+    "pages/employee/loss/after_sale/details/scan/index",
+    "pages/employee/loss/after_sale/details/scan/details/index",
+    "pages/employee/shipment/choose_cooperative/index",
+    "pages/employee/shipment/choose_cooperative/operate/index",
+    "pages/employee/shipment/choose_cooperative/operate/out_stock/index",
+    "pages/employee/shipment/choose_cooperative/operate/end_shipment/index",
+    "pages/select_time/select_time",
+    "pages/newPage/newPage",
+    "pages/scanQrCode/scanQrCode",
+    "pages/code/code"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2d3a4b",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#333333",
+    "selectedColor": "#2a73b1",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/boss/index/index",
+        "text": "首页",
+        "iconPath": "./images/boss/icon_nav_boss_index.png",
+        "selectedIconPath": "./images/boss/icon_nav_boss_index_selected.png"
+      },
+      {
+        "pagePath": "pages/boss/operation/index",
+        "text": "操作",
+        "iconPath": "./images/boss/icon_nav_boss_operation.png",
+        "selectedIconPath": "./images/boss/icon_nav_boss_operation_selected.png"
+      },
+      {
+        "pagePath": "pages/boss/bill/index",
+        "text": "账单",
+        "iconPath": "./images/boss/icon_nav_boss_bill.png",
+        "selectedIconPath": "./images/boss/icon_nav_boss_bill_selected.png"
+      },
+      {
+        "pagePath": "pages/boss/my/index",
+        "text": "我的",
+        "iconPath": "./images/boss/icon_nav_boss_my.png",
+        "selectedIconPath": "./images/boss/icon_nav_boss_my_selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

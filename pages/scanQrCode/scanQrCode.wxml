@@ -1,0 +1,14 @@
+<!--pages/scanQrCode/scanQrCode.wxml-->
+<view class='bottom'>
+  <button type="primary" class='goon' bindtap="scanCode">继续卸货</button>
+  <button type="success" bindtap="back">结束卸货</button>
+</view>
+<view class='census'>
+  <view class='item'>供应商名称：<text class='txt-right'>{{resData.supplierName}}</text></view>
+  <view class='item'>品种名称：<text class='txt-right'>{{resData.categoryName}}</text></view>
+  <view class='item'>卸货箱数：<text class='txt-right'>{{resData.count}}</text></view>
+  <!-- <view class='item'>去皮：{{resData.aaa}}</view> -->
+  <view class='item'>重量：<text class='txt-right'>{{weight}}</text></view>
+  <view class='item'>标识：<text class='txt-right'>{{resData.marker}}</text></view>
+</view>
+<view class='msg'>{{ resData.warn ? '预警' : '' }}</view>

@@ -1,0 +1,70 @@
+/* pages/boss/index/index.wxss */
+@import "../../common/global.wxss";
+
+.chartBox{
+  
+}
+.datePickerBox{
+  height: 120rpx;
+}
+.datePicker .picker{
+  position: relative;
+}
+.picker input{
+  line-height: 40rpx;
+}
+.iconDate{
+  width: 21rpx;
+  height: 24rpx;
+  position: absolute;
+  right: 32rpx;
+  top: 17rpx;
+}
+.iconDateEnd{
+  right: 20rpx;
+}
+#dateStartValue{
+  margin-right: 5%;
+}
+#dateEndValue{
+  margin-left: 5%;
+}
+
+.chartItem{
+  height: 430rpx;
+  padding: 0 30rpx;
+  width:auto;
+}
+.chartItem view{
+  height: 410rpx;
+}
+
+.notFinishTitle{
+  height: 98rpx;
+  line-height: 98rpx;
+}
+.BillItem{
+  height: 100rpx;
+}
+.BillItem .itemCommonBox:nth-child(1),.BillItem .itemCommonBox:nth-child(2){
+  width: 20%;
+  height: 70rpx;
+}
+.BillItem .itemCommonBox:nth-child(3){
+  width: 30%;
+  height: 70rpx;
+}
+.BillItem .itemCommonBox:nth-child(4){
+  width: 22.5%;
+}
+.BillItem .itemCommonBox:nth-child(5){
+  width: 7.5%
+}
+.btnOnClick{
+  height: 83rpx;
+  line-height: 34rpx;
+  padding: 10rpx;
+  writing-mode:tb-rl;
+  border: 0;
+  border-radius: 0;
+}

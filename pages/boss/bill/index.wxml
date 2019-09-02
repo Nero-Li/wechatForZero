@@ -1,0 +1,141 @@
+<!--pages/boss/bill/index.wxml-->
+<wxs module="filters" src="../../../utils/filter.wxs"></wxs>
+<view class='bg_f7f7f7 min_height100' catchtouchmove='{{!screenDialogShow ? catchtouchmove : ""}}'>
+  <!-- searchBox_S -->
+  <view class='searchBox width_100 bg_ffffff'>
+    <view class='searchInputBox'>
+      <input type='text' placeholder='请输入查询内容' class='broder_color_ced1e2 broder_radius6 fs_24 queryInput' bindtap='bindHideScreenDialog' bindconfirm='bindBillSearch' bindinput='bindChangeValue'></input>
+      <view class='voiceSearchBox flex vertical_center'>
+        <image src='../../../images/icon_voiceSearchBlack.png'></image>
+      </view>
+    </view>
+    <!-- 条件筛选 -->
+    <view class='conditionScreenBox margin_lr30'>
+      <view class='screenBox fs_28 text_333333 flex vertical_center fl' bindtap='bindShowScreenDialog'>
+        <text>筛选</text>
+        <image src='../../../images/icon_select.png'></image>
+      </view>
+      <!-- <view class='timerBox flex vertical_center fr' bindtap='bindHideScreenDialog'>
+        <picker mode="date" value="{{date}}" end="{{screenTime}}" bindchange="bindDateScreenChange">
+          <image src='../../../images/icon_date.png'></image>
+        </picker>
+      </view> -->
+      <view class='datePickerBox flex vertical_center fr'>
+        <view class='datePicker'>
+          <picker mode="date" value="{{date}}" end="{{dateEnd}}" bindchange="bindDateStartChange">
+            <view class="picker">
+              <input type='text' disabled='disabled' value='{{dateStart}}' class='broder_color_ced1e2 broder_radius10 padding_l5 height_40 fs_24 text_999999' id='dateStartValue' placeholder='开始时间'></input>
+              <image src='../../../images/boss/icon_date.png' class='iconDate iconDateStart'></image>
+            </view>
+          </picker>
+        </view>
+        <text class='text_999999'> - </text>
+        <view class='datePicker'>
+          <picker mode="date" value="{{date}}" start="{{dateStart}}" end="{{dateEnd != '' ? dateEnd : cutOffTime}}" bindchange="bindDateEndChange">
+            <view class="picker">
+              <input type='text' disabled='disabled' value='{{dateEnd}}' class='broder_color_ced1e2 broder_radius10 padding_l5 height_40 fs_24 text_999999' id='dateEndValue' placeholder='结束时间'></input>
+              <image src='../../../images/boss/icon_date.png' class='iconDate iconDateEnd'></image>
+            </view>
+          </picker>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <!-- 筛选弹窗 -->
+  <view hidden="{{screenDialogShow}}" class="screenDialogShow">
+    <view class='mask'></view>
+    <view class='screenDialogBox width_100 bg_ffffff'>
+      <view class='text_333333 fs_28 margin_lr30'>
+        <scroll-view scroll-y id='screenScroll'>
+          <view class='merchantBox clearfix'>
+            <view class='merchant fl'>
+              <select data-selecttype="0" prop-array='{{screenItem.customerlist}}' selectType='1' class='fl programSelect' bind:scrollChildrenMore="refreshListData" bind:endSelect="onProgrammeItem">
+              </select>
+            </view>
+            <view class='merchant fl'>
+              <select data-selecttype="1" prop-array='{{screenItem.supplierlist}}' selectType='1' class='fl programSelect' bind:scrollChildrenMore="refreshListData" bind:endSelect="onProgrammeItem">
+              </select>
+            </view>
+          </view>
+
+          <view class='moneyBox clearfix'>
+            <view wx:for="{{screenItem.money}}" wx:for-item="money" wx:key="moneyKey" wx:for-index="idx" data-check='money_{{money.check}}_{{idx}}_{{money.status}}' class="{{idx == 2 || idx == 4 ? 'clear': ''}} {{money.check ? 'bg_41a0fe text_fff': ''}}" bindtap='bindScreenCheck'>{{money.name}}</view>
+          </view>
+          <view class='goodsBox clearfix'>
+            <view wx:for="{{screenItem.goods}}" wx:for-item="goods" wx:key="goodsKey" wx:for-index="idx" data-check='goods_{{goods.check}}_{{idx}}_{{goods.type}}' class="{{goods.check ? 'bg_41a0fe text_fff': ''}}" bindtap='bindScreenCheck'>{{goods.name}}</view>
+          </view>
+        </scroll-view>
+        <view class='btnBox width_100 fs_48 text_fff btnbg_409efe text_center' bindtap='bindShowScreenDialog' data-name='confirm'>确定</view>
+      </view>
+    </view>
+  </view>
+  <!-- searchBox_E -->
+
+  <view class='dataListheaderSideBox'>
+    <view class='dataListheaderBox shadow_e2e2e2'>
+      <view class='dataListheader text_333333'>
+        <!-- <view class='dataTitle fs_28'>本月账单：</view> -->
+        <view class='dataTitle fs_28'>账单：</view>
+        <view class='expenditureIncomeBox fs_24 clearfix margin_lr30'>
+          <view class='expenditureIncomeW fl'>支出
+            <text class='text_409efe margin_l15'>{{bill.income}}元</text> </view>
+          <view class='expenditureIncomeW fl'>收入
+            <text class='text_409efe margin_l15'>{{bill.expenditure}}元</text> </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <!-- data_S -->
+  <view class='dataListBox'>
+
+    <view class='dataList margin_lr30 shadow_e2e2e2 bg_ffffff' wx:for="{{bill.list}}" wx:key="{{key}}">
+
+      <!-- wx:if="{{item.status == 1 || item.status == -1}}" -->
+      <view class='BillItem fs_22 flex vertical_center'>
+        <navigator url='./details/index?id={{item.id}}&type={{item.type}}&status={{item.status}}&csname={{item.csname}}&amount={{item.realAmount == null ? item.amount : item.realAmount}}' class='billListBox flex vertical_center'>
+          <view class='itemCommonBox margin_tb20 broderRight_color_ced1e2 flex vertical_center'>
+            <view class='text_center width_100'>
+              <view class='text_ellipsis csName width_100'>{{item.csname}}</view>
+              <view class='text_ellipsis csName fs_20 width_100'>{{filters.timeStamp(item.billDate,'day','-')}}</view>
+              <text class='fs_20 text_999999'>[ {{item.type == 1 ? '供应商' : '合作商' }} ]</text>
+            </view>
+          </view>
+          <view class='itemCommonBox margin_tb20 broderRight_color_ced1e2 flex vertical_center'>
+            <view class='width_100 text_center'>
+              <view class='categoryName'>{{item.categoryname != null ? item.categoryname : '--'}}</view>
+            </view>
+          </view>
+          <view class='itemCommonBox margin_tb20 broderRight_color_ced1e2 flex vertical_center'>
+            <view class='width_100 text_center'>
+              <view class='text_ellipsis csName width_100'>{{item.quantity ? item.quantity + '箱' : '--'}}</view>
+            </view>
+          </view>
+          <view class='itemCommonBox margin_tb20 broderRight_color_ced1e2 flex vertical_center'>
+            <view>
+              <!-- 商品流程 1：卸货，2.出货 -->
+              <view wx:if="{{item.type == 1}}">卸货</view>
+              <view wx:else>出货</view>
+            </view>
+          </view>
+          <view class='itemCommonBox flex vertical_center'>
+            <view class='text_ellipsis csName width_100 text_center'>{{item.realAmount == null ? (item.amount ? item.amount + '元' : '--') : item.realAmount + '元'}}</view>
+          </view>
+          <view class='itemCommonBox flex text_center'>
+            <!-- bindtap='bindChangeBillState' -->
+            <view class='fs_24 text_fff bg_41a0fe btnOnClick' data-stata='{{item.status}}'>{{item.statusName}}</view>
+            <!-- <view class='fs_24 text_fff bg_e0e3f6 btnOnClick' wx:elif="{{item.status == -1}}">{{item.statusName}}</view> -->
+          </view>
+        </navigator>
+
+      </view>
+
+
+    </view>
+
+    <nodata wx:if="{{noData}}"></nodata>
+  </view>
+  <!-- data_E -->
+
+</view>

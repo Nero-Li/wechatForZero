@@ -1,0 +1,10 @@
+<template name="toast">      
+     <view class='toast-out' wx:if='{{isShow}}'>　　　　
+         <view class='toast-in'>　　　　　　    
+             <view class='toast-txt'>供应商:{{sup}}</view>
+             <view class='toast-txt'>品种:{{eggtype}}</view>
+             <view class='toast-txt'>称重:{{weight}}</view>
+             <span>{{reTips}}</span>
+         </view>
+     </view>
+</template>

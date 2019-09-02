@@ -1,0 +1,17 @@
+/* pages/role_selection/index.wxss */
+@import '../common/global.wxss';
+
+.rolebox{
+  margin: 80rpx 64rpx 0 64rpx;
+}
+.role{
+  border:1rpx solid #445569;
+  padding: 44rpx 70rpx; 
+}
+.iconRole{
+  width: 166rpx;
+  height: 166rpx;
+}
+.roleText{
+  margin-left: 100rpx;
+}

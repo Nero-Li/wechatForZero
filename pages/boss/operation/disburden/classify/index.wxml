@@ -1,0 +1,74 @@
+<!--pages/boss/operation/disburden/classify/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+
+  <view class='headerBox width_100 broder_bottomColor_cdcdcd clearfix'>
+    <scroll-view class='tabBox margin_lr30 fl' scroll-x='true' scroll-into-view='id{{task.index}}' scroll-with-animation="true">
+      <view class='connentBox clearfix' style='width:{{connentBoxWidth}}px;'>
+        <view class='tabItem fs_24 text_center fl {{item.active ? "text_41a0fe broder_bottomColor_41a0fe": ""}}' wx:for="{{task.list}}" wx:key="key" data-state='{{index}}_{{item.active}}' id='id{{index}}' bindtap='bindTabTask'>{{item.cussupName}}</view>
+      </view>
+    </scroll-view>
+    <view class='cancelTask margin_lr30 fs_24 fr text_41a0fe' bindtap='bindCancelCurrentTask'>取消当前卸货任务</view>
+  </view>
+
+  <view class='cneterContentBox margin_lr30'>
+    <view class='centerHeadBox fs_24'>
+      <view class='fl text_333333 text_ellipsis cussupNameW'>供应商：{{task.list[task.index].cussupName}}</view>
+      <view class='fr text_41a0fe' bindtap='bindToDisburdenList'>卸货列表</view>
+    </view>
+    <view class='cneterContainerBox'>
+
+      <view class='fs_24'>
+        <scroll-view scroll-y class='tableListScroll' bindscrolltolower='refreshListData' style='height:{{tableTrListHeight}}'>
+          <view class='table shadow_e2e2e2 margin_b30' wx:for="{{task.itemData.varietyDetails}}" wx:key="key">
+            <view class='tr tableHead'>
+              <view class='th colspan' style='flex:3;align-items: left;'>{{item.name}}</view>
+            </view>
+            <view class='tr'>
+              <view class='td index width_150rpx' style='min-height: {{50 * (item.programmeList.length + 1)}}rpx'>方案</view>
+              <view class='td width_100 block padding_0'>
+                <view class='tr'>
+                  <view class='th width_100 bg_ffffff'>标记</view>
+                  <view class='th width_100 bg_ffffff'>数量/箱</view>
+                </view>
+                <view class='tr' wx:for="{{item.item}}" wx:key="key" wx:for-item="pList">
+                  <view class='td width_100' wx:if="{{item.mode == '1'}}">去皮</view>
+                  <view class='td width_100' wx:elif="{{item.mode == '2'}}">包</view>
+                  <view class='td width_100' wx:else>{{item.mode}}</view>
+                  <view class='td width_100'>{{pList.sumVal}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view class='table shadow_e2e2e2 margin_b30' wx:if="{{task.itemData.varietyDetails.length > 0}}">
+            <view class='tr tableHead'>
+              <view class='th index width_150rpx'>合计：</view>
+              <view class='th width_100 block padding_0'>
+                <view class='tr'>
+                  <view class='th width_100'>预警</view>
+                  <view class='th width_100'>总数</view>
+                </view>
+              </view>
+            </view>
+            <view class='tr' >
+              <view class='td index width_150rpx bg_ffffff'></view>
+              <view class='td width_100 block padding_0'>
+                <view class='tr'>
+                  <view class='td width_100'>{{task.itemData.totalData.alert}}</view>
+                  <view class='td width_100'>{{task.itemData.totalData.total}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <nodata wx:if="{{noData}}"></nodata>
+        </scroll-view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='height_50 padding_tb20 loadingBox flex vertical_center'>
+    <list-loadindg isShow="{{isShow}}"></list-loadindg>
+  </view>
+  
+</view>

@@ -1,0 +1,7 @@
+/* pages/login/account/index.wxss */
+@import '../../common/global.wxss';
+
+ .btnAccount{
+   height: 100rpx;
+   line-height: 100rpx;
+ }

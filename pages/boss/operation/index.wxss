@@ -1,0 +1,31 @@
+/* pages/boss/operation/index.wxss */
+@import "../../common/global.wxss";
+
+.operationBox{
+  padding-top:20rpx;
+  padding-bottom:30rpx;
+}
+.operationItem{
+  width: 100%;
+  height: 300rpx;
+  margin: 0 0 40rpx 0;
+}
+.operationItem:last-child{
+  margin: 0 !important;
+}
+.operationIcon{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 15rpx;
+}
+.btnSelfLoss{
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-bottom: 30rpx;
+}
+.btnSelfLoss image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+}

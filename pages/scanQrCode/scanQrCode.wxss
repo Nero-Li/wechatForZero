@@ -1,0 +1,31 @@
+/* pages/scanQrCode/scanQrCode.wxss */
+.bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.census{
+  /* text-align: center; */
+  padding-top: 30px;
+  color: #666666;
+  font-size: 40rpx;
+}
+.item{
+  padding: 20rpx;
+  border-bottom: 1px solid #999;
+}
+.txt-right{
+  text-align: right;
+  float: right;
+}
+.msg{
+  text-align: center;
+  padding-top: 200rpx;
+  color: #f56c6c;
+}
+.goon{
+  margin-bottom: 20rpx;
+}

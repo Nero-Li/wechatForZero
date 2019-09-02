@@ -1,0 +1,70 @@
+<!--pages/boss/operation/inventory/loss_management/details/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+
+  <scroll-view scroll-y>
+    <view class='listBox margin_lr30 fs_28'>
+      <view class='listHead fr text_fff bg_41a0fe broder_radius6 text_center' bindtap='bindToBillDetails' data-id='1'>账单信息</view>
+      <view class='recoveryBox clear'>
+        <view class='fs_36 text_center text_f66b6e margin_b30'>报损回收</view>
+        <view class='table clear shadow_e2e2e2'>
+          <view class='tr tableHead'>
+            <view class='th colspan bg_f66b6e text_fff' style='flex:6;align-items: left;'>
+              <view class='clearfix width_100'>
+                <view class='fl'>
+                  <text class='fl'>{{recovery.name}}</text>
+                </view>
+                <view class='fr'>
+                  <text class='fl'>标记码：</text><text class='fl'>{{recovery.signNO}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class='tr'>
+            <view class='td'>标记</view>
+            <view class='td'>实重</view>
+            <view class='td'>时间</view>
+          </view>
+          <view class='tr' wx:for="{{recovery.list}}" wx:key="key">
+            <view class='td'>{{item.sign}}</view>
+            <view class='td'>{{item.weight}}</view>
+            <view class='td'>{{item.date}}</view>
+          </view>
+        </view>
+        <view class='lossReason fs_22 text_666666'>报损原因：{{recovery.lossReason}}</view>
+      </view>
+
+      <view class='shipmentBox clear'>
+        <view class='fs_36 text_center text_41a0fe margin_b30'>报损出货</view>
+        <view class='table clear shadow_e2e2e2'>
+          <view class='tr tableHead'>
+            <view class='th colspan bg_41a0fe text_fff' style='flex:6;align-items: left;'>
+              <view class='clearfix width_100'>
+                <view class='fl'>
+                  <text class='fl'>{{shipment.name}}</text>
+                </view>
+                <view class='fr'>
+                  <text class='fl'>标记码：</text><text class='fl'>{{shipment.signNO}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class='tr'>
+            <view class='td'>标记</view>
+            <view class='td'>实重</view>
+            <view class='td'>时间</view>
+          </view>
+          <view class='tr' wx:for="{{shipment.list}}" wx:key="key">
+            <view class='td'>{{item.sign}}</view>
+            <view class='td'>{{item.weight}}</view>
+            <view class='td'>{{item.date}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='height_50 padding_tb20 loadingBox flex vertical_center'>
+        <list-loadindg isShow="{{isShow}}"></list-loadindg>
+      </view> -->
+
+    </view>
+  </scroll-view>
+
+</view>

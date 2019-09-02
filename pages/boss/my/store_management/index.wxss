@@ -1,0 +1,46 @@
+/* pages/boss/my/store_management/index.wxss */
+@import "../../../common/global.wxss";
+.myBox{
+  padding: 40rpx 0 20rpx 0; 
+  height: 800rpx;
+}
+.headerBox{
+  height: 184rpx;
+}
+.headerItem{
+  padding-top: 27rpx;
+}
+.headPortrait,.headPortrait image{
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.perfectInformationBox{
+  width: 550rpx;
+  height: 130rpx;
+  line-height: 130rpx;
+}
+
+.infoListItemBox{
+  height: 100rpx;
+}
+.infoList{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.infoList input{
+  width: 480rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 0;
+  margin-top: 2rpx;
+}
+.icon_arrows{
+  margin-top: 28rpx;
+}
+.btnSaveBox{
+  line-height: 88rpx;
+}
+.pickerStoreBox{
+  width: 585rpx;
+}

@@ -1,0 +1,72 @@
+<!--pages/boss/my/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+  <view class='myBox'>
+    <view class='shadow_e2e2e2 width_100 bg_ffffff headerBox' bindtap='bindToPerfectInformation'>
+      <view class='flex vertical_center headerItem'>
+        <view class='headPortrait'>
+          <image src='{{avatarUrl}}' class='broder_radius50_bai'></image>
+        </view>
+        <view class='margin_lr30 text_333333 userNamePhone width_100'>
+          <text class='block fs_28'>{{name}}</text>
+          <text class='block text_666666 fs_22'>{{phone}}</text>
+        </view>
+        <view class='text_333333 width_100 text_right vertical_center perfectInformationBox'>
+          <text class='fs_28'>完善信息</text>
+          <image src='../../../images/icon_arrows.png' class='icon_arrows margin_l15'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class='centerBox'>
+      <view class='shadow_e2e2e2 flex vertical_center margin_t30 bg_ffffff infoListItemBox' bindtap='bindToStoreManagement'>
+        <view class='margin_lr30 fs_28 text_333333 flex vertical_center width_100 infoList'>
+          <image src='../../../images/boss/my/icon_store.png' class='icon_store'></image>
+          <view class='margin_lr30 width_100'>所属门店</view>
+          <image src='../../../images/icon_arrows.png' class='icon_arrows margin_l15'></image>
+        </view>
+      </view>
+      <view class='shadow_e2e2e2 flex vertical_center margin_t30 bg_ffffff infoListItemBox' bindtap='bindToChangePassword'>
+        <view class='margin_lr30 fs_28 text_333333 flex vertical_center width_100 infoList'>
+          <image src='../../../images/boss/my/icon_changePassword.png' class='icon_store'></image>
+          <view class='margin_l30 width_100'>修改密码</view>
+          <image src='../../../images/icon_arrows.png' class='icon_arrows margin_l15'></image>
+        </view>
+      </view>
+      <view class='shadow_e2e2e2 flex vertical_center margin_t30 bg_ffffff infoListItemBox' bindtap='bindTointegral'>
+        <view class='margin_lr30 fs_28 text_333333 flex vertical_center width_100 infoList'>
+          <image src='../../../images/boss/my/icon_integral.png' class='icon_store'></image>
+          <view class='margin_l30 width_100'>我的积分</view>
+          <image src='../../../images/icon_arrows.png' class='icon_arrows margin_l15'></image>
+        </view>
+      </view>
+      <view class='shadow_e2e2e2 flex vertical_center margin_t30 bg_ffffff infoListItemBox' bindtap='bindToAchievement'>
+        <view class='margin_lr30 fs_28 text_333333 flex vertical_center width_100 infoList'>
+          <image src='../../../images/boss/my/icon_achievement.png' class='icon_store'></image>
+          <view class='margin_l30 width_100'>我的业绩</view>
+          <image src='../../../images/icon_arrows.png' class='icon_arrows margin_l15'></image>
+        </view>
+      </view>
+      <view class='shadow_e2e2e2 flex vertical_center margin_t30 bg_ffffff infoListItemBox' bindtap='bindLogout'>
+        <view class='margin_lr30 fs_28 text_333333 flex vertical_center width_100 infoList'>
+          <image src='../../../images/boss/my/icon_changePassword.png' class='icon_store'></image>
+          <view class='margin_l30 width_100'>退出登录</view>
+          <image src='../../../images/icon_arrows.png' class='icon_arrows margin_l15'></image>
+        </view>
+      </view>
+      <view class='shadow_e2e2e2 flex vertical_center margin_t30 bg_ffffff infoListItemBox'>
+        <view class='margin_lr30 fs_28 text_333333 flex vertical_center width_100 infoList'>
+          <image src='../../../images/boss/my/icon_version.png' class='icon_store'></image>
+          <view class='margin_l30 width_100'>
+            <text class='fl'>版本号</text>
+            <text class='text_999999 text_right fs_24 fr'>2019-04-02 V1.0.0</text>
+          </view>
+          <image src='../../../images/icon_arrows.png' class='icon_arrows margin_l15'></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <nav-employee class="employeeNav"></nav-employee>
+  
+</view>

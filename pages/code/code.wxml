@@ -1,0 +1,5 @@
+<!--pages/code/code.wxml-->
+<import src="../alertToast/toast.wxml" />
+<button bindtap="click">点我扫一扫</button>
+<button bindtap="startBluetoothDevicesDiscovery">连接设备</button>
+<template is="toast" data="{{sup,eggtype,reTips,weight,isShow}}"></template>

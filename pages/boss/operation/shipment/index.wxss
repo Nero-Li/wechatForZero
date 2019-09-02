@@ -1,0 +1,64 @@
+/* pages/boss/operation/shipment/index.wxss */
+@import "../../../common/global.wxss";
+@import "../../../common/table.wxss";
+
+.headerBox{
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.tabBox{
+  width: 420rpx;
+}
+.tabBox ::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.connentBox{
+  width: 370rpx;
+}
+.modalContent{
+  min-height: 70rpx;
+  max-height: 280rpx;
+}
+.modalContent view{
+  width: 165rpx;height: 50rpx;line-height: 50rpx;
+  margin: 0 20rpx 20rpx 0;
+}
+.modalContent view:last-child{
+  margin: 0 20rpx 0 0;
+}
+.tabItem{
+  height: 70rpx;
+  padding:0 15rpx;
+}
+.chooseProgramme{
+  width: 160rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  margin: 20rpx;
+}
+
+.centerHeadBox{
+  height: 82rpx;
+  line-height: 82rpx;
+}
+.tableListScroll{
+  height: 780rpx;
+}
+.indexWidth{
+  width: 84rpx;
+}
+
+.alertNumber{
+  height: 30rpx;
+  line-height: 30rpx;
+}
+.btnShipmentEnd{
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 20rpx auto;
+}
+.btnRemove{
+  width: 80rpx;
+}

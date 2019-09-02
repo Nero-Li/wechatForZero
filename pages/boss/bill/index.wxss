@@ -1,0 +1,152 @@
+/* pages/boss/bill/index.wxss */
+@import "../../common/global.wxss";
+
+.searchBox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.searchInputBox{
+  margin: 20rpx 30rpx;
+  position: relative;
+}
+.queryInput{
+  padding: 0 90rpx 0 30rpx;
+  height: 50rpx;
+}
+.voiceSearchBox{
+  width: 84rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 0;right: 0;
+}
+.voiceSearchBox image{
+  width: 23rpx;
+  height: 33rpx;
+}
+
+.conditionScreenBox{
+  height: 84rpx;
+}
+.screenBox{
+  width: 100rpx;
+  height: 50rpx;
+  padding-top: 12rpx;
+}
+.screenBox image{
+  width: 14rpx;
+  height: 8rpx;
+  margin-left: 10rpx;
+}
+.datePickerBox{
+  padding-top: 8rpx;
+}
+.datePicker{
+  position: relative;
+  width: 200rpx;
+}
+.timerBox{
+  width: 60rpx;
+  height: 50rpx;
+  padding-top: 17rpx;
+  margin-right: 12rpx;
+}
+.timerBox image{
+  width: 31rpx;
+  height: 34rpx;
+}
+.screenDialogBox{
+  height: 475rpx;
+  position: fixed;left: 0;top: 170rpx;z-index: 2;border-top: 1rpx solid #7f7f7f;
+}
+#screenScroll{
+  height: 360rpx;
+}
+.merchant{
+  margin: 10rpx 20rpx 10rpx 10rpx;
+}
+.merchantBox,.moneyBox,.goodsBox{
+  padding-top: 35rpx;
+}
+.moneyBox view,.goodsBox view{
+  width: 180rpx;height: 50rpx;line-height: 50rpx;text-align: center;
+  float: left;background: #e0e3f6;border-radius: 6rpx;margin: 10rpx 20rpx 10rpx 10rpx;
+}
+.btnBox{
+  height: 88rpx;
+  line-height: 88rpx;
+  position: absolute;left: 0;bottom: 0;
+}
+
+.dataListheaderSideBox{
+  padding-top: 160rpx;
+  background: #fff;
+  position: relative;
+  height: 98rpx;
+}
+.dataListheaderBox{
+  position: fixed;
+  background: #fff;
+  z-index: 1;
+  width: 100%;
+  height: 98rpx;
+  top: 160rpx;
+}
+.dataListBox{
+  /* padding-top: 174rpx; */
+}
+.dataListheader{
+  margin: 20rpx 30rpx;
+}
+.dataTitle{
+  line-height: 40rpx;
+}
+.expenditureIncomeW{
+  width: 230rpx;line-height: 32rpx;
+}
+.dataList{
+  margin-bottom: 30rpx;
+}
+.BillItem{
+  height: 100rpx;
+  position: relative;
+}
+.billListBox{
+  /* width: 92.5% */
+  width: 100%;
+}
+.billListBox .itemCommonBox:nth-child(1){
+  width: 27.5%;
+  height: 70rpx;
+}
+.billListBox .itemCommonBox:nth-child(2),.BillItem .itemCommonBox:nth-child(3){
+  width: 15%;
+  height: 70rpx;
+}
+.BillItem .itemCommonBox:nth-child(4){
+  width: 12.5%;
+  height: 70rpx;
+}
+.billListBox .itemCommonBox:nth-child(5){
+  width: 22.5%
+}
+.categoryName{
+  word-break:break-all;
+  padding:0 10rpx;
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.btnOnClick{
+  height: 82rpx;
+  line-height: 34rpx;
+  padding: 10rpx;
+  writing-mode:tb-rl;
+  border: 0;
+  border-radius: 0;
+}
+.screenDialogShow{
+  display: block;
+}

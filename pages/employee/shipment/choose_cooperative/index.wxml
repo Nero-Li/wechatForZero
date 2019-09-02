@@ -1,0 +1,22 @@
+<!--pages/employee/shipment/choose_cooperative/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+
+  <form>
+    <view class='width_100 searchFixedBox'>
+
+      <view class='searchBox'>
+        <input type='text' class='text_fff fs_28 bg_283444 height_74 broder_radius10  broder_color_455469 padding_l5 padding_r100' placeholder='请输入要出货的合作商' placeholder-class='text_fff text_center searchInputP' value='{{adressValue}}' bindconfirm='bindSearchConfirm' bindinput='bindKeyWordChange'   maxlength="50"></input>
+        <view class='btnVoiceSearch flex vertical_center'>
+          <image src='../../../../images/icon_voiceSearch.png' class=''></image>
+        </view>
+      </view>
+      
+    </view>
+  </form>
+
+  <view class='margin_lr60 storeListBox'>
+    <text class='text_fff block fs_28 width_100 text_center broder_radius6 wordLH' wx:for="{{cooperative.list}}" wx:key="key" bindtap='bindToOperate' data-id='{{item.id}}' data-name='{{item.name}}'>{{item.name}}</text>
+    <nodata wx:if="{{noData}}"></nodata>
+  </view>
+
+</view>

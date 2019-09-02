@@ -1,0 +1,15 @@
+<!--pages/boss/operation/inventory/list/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+  <view class='listBox'>
+    <view class='list fs_28 bg_ffffff clearfix margin_lr30 margin_t35 flex' wx:for='{{list}}' wx:key='key' bindtap='bindToListDetails' data-id='{{item.specificationId}}' data-pid='{{item.programId}}' data-sign='{{item.marker}}' data-stockid='{{item.stockId}}'>
+      <view class=' listLeftBox  margin_lr30'>
+        <view class='width_50 fl'>标记：<text>{{item.marker}}</text></view>
+        <view class='width_50 fl'>区间：<text>{{item.weightMin}} - {{item.weightMax}}</text></view>
+        <view class='width_50 fl'>方式：<text>{{item.mode == '1' ? '去皮' : '包'}}</text></view>
+        <view class='width_50 fl'>剩余：<text>{{item.quantity == null ? '0' : item.quantity}}箱</text></view>
+      </view>
+      <view class='listRightBox text_center btnbg_409efe text_fff flex vertical_center'>查看详情</view>
+    </view>
+    <nodata wx:if="{{noData}}"></nodata>
+  </view>
+</view>

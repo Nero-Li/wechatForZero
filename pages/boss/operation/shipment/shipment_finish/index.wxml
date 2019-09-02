@@ -1,0 +1,131 @@
+<!--pages/boss/operation/shipment/shipment_finish/index.wxml-->
+<wxs module="filters" src="../../../../../utils/filter.wxs"></wxs>
+<view class='bg_f7f7f7 min_height100'>
+
+  <scroll-view scroll-y style='height:{{listBoxHeight}}px' bindscrolltolower='refreshListData'>
+    <view class='listBox margin_lr30 fs_28'>
+      <view class='listHead fr text_666666'>合作商：<text>{{basicData.businessName}}</text></view>
+
+      <view class='table clear shadow_e2e2e2'>
+        <view class='tr tableHead'>
+          <view class='th colspan' style='flex:6;align-items: left;'>
+            <view class='clearfix width_100'>
+              <view class='fl'>
+                <text class='fl'>姓名：</text><text class='fl'>{{list.blankBillDTOList[0].customerName}}</text>
+              </view>
+              <view class='fr'>
+                <text class='fl'>账单编号：</text><text class='fl'>{{list.blankBillDTOList[0].billNo}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='tr'>
+          <view class='td width_1666P bg_ffffff'>品种</view>
+          <view class='td block padding_0 tableListBox listHead'>
+            <view class='tr'>
+              <view class='td width_1666P bg_ffffff'>标记</view>
+              <view class='td width_1666P bg_ffffff'>实重</view>
+              <view class='td width_1666P bg_ffffff'>单价</view>
+              <view class='td width_1666P bg_ffffff'>数量</view>
+              <view class='td width_1666P bg_ffffff'>小计</view>
+            </view>
+          </view>
+        </view>
+        <scroll-view scroll-y bindscrolltolower='refreshListData'>
+          <view class='tr' wx:for="{{billList.blankBillDTOList}}" wx:for-item="lItem" wx:key="key">
+            <view class='td index width_1666P bg_ffffff'>{{lItem.categoryName}}</view>
+            <view class='td block padding_0 tableListBox'>
+              <view class='tr' wx:for="{{lItem.item}}" wx:for-item="listData" wx:key="liKey"  wx:for-index="lItemIndex">
+                <view class='td width_1666P'>{{listData.marker}}</view>
+                <view class='td width_1666P'>{{listData.totalWeight}}</view>
+                <view class='td width_1666P'>
+                  <input type='digit' value='{{listData.price}}' class='text_center' bindinput='bindUpdateValue' data-dataindex='{{index}}' data-litemindex='{{lItemIndex}}'></input>
+                </view>
+                <view class='td width_1666P'>{{listData.quantity}}</view>
+                <view class='td width_1666P'>{{listData.mode == 1 ? filters.toFix(listData.price * listData.totalWeight,2) : filters.toFix(listData.price * listData.quantity,2)}}</view>
+              </view>
+            </view>
+          </view>
+
+          <view class='tr'>
+            <view class='td index width_1666P bg_ffffff'>合计</view>
+            <view class='td width_100 block padding_0 tableListBox'>
+              <view class='tr'>
+                <view class='td width_100 bg_ffffff' style='border-bottom:0;'><text class='text_999999'>人民币：</text>{{billList.amount ? billList.amount : '0.00'}}元</view>
+              </view>
+            </view>
+          </view>
+
+          <view class='tr'>
+            <view class='td index width_1666P bg_ffffff'>应收</view>
+            <view class='td width_100 block padding_0 tableListBox'>
+              <view class='tr'>
+                <view class='td width_100 bg_ffffff' style='border-bottom:0;'><text class='text_999999'>人民币：</text>
+                  <input type='text' value="{{billList.realAmount ? billList.realAmount : '0.00'}}" bindinput='bindUpdateRealAmount' ></input>
+                元</view>
+              </view>
+            </view>
+          </view>
+          <!-- <view class='tr' wx:for='{{list}}' wx:key='key'>
+            <view class='td index indexWidth'>{{index+1}}</view>
+            <view class='td width_33'>{{item.sign}}</view>
+            <view class='td width_33'>{{item.weight}}</view>
+            <view class='td width_33'>{{item.from}}</view>
+          </view> -->
+        </scroll-view>
+      </view>
+
+      <view class='reportLossBox'>
+        <view class='chooseLossBox clearfix fs_24'>
+          <text class='fl'>是否报损：</text>
+          <radio-group class="radio-group fl" bindchange="bindShowLoss">
+            <label class="radio">
+              是 <radio value="1" checked="" color='#fff' />
+            </label>
+            <label class="radio">
+              否 <radio value="0" checked="true" color='#fff' />
+            </label>
+          </radio-group>
+          <input type='text' class='fl broder_color_ced1e2 broder_radius6 padding_lr5 lossCodeInput' placeholder='请输入报损标记码' wx:if="{{isShowLoss}}"></input>
+        </view>
+        <view class='lossOrderBox'  wx:if="{{isShowLoss}}">
+          <text class='fs_22 text_999999 block'>>>最近订单日期:2019-04-22</text>
+          <view class='table tableLostBox'>
+            <view class='tr'>
+              <view class='td'>标记码</view>
+              <view class='td'>订单日期</view>
+              <view class='td'>标记</view>
+              <view class='td'>实重</view>
+            </view>
+            <view class='tr' wx:for="{{lossList}}" wx:key="loKey" wx:for-item="loItem">
+              <view class='td'>{{loItem.signNO}}</view>
+              <view class='td'>{{loItem.date}}</view>
+              <view class='td'>{{loItem.sign}}</view>
+              <view class='td'>{{loItem.weight}}</view>
+            </view>
+          </view>
+          <view class='chooseEmployeeBox'>
+            <view class='chooseEmployeeTitle'>请选择操作员工：</view>
+            <view class='employeeList clearfix'>
+              <view class='employeeItem fl text_center broder_color_41a0fe broder_radius6 fs_28 text_409efe {{employee.active ? "bg_41a0fe text_fff" : ""}}' wx:for="{{employee.list}}" wx:key="key" wx:for-item="employee" bindtap='bindchooseEmployee' data-active='{{employee.active}}' data-id='{{employee.id}}' data-index='{{index}}'
+              >{{employee.name}}</view>
+            </view>
+          </view>
+          <view class='btnLossBox'>
+            <view class='btnLoss btnbg_409efe text_fff text_center fs_28 broder_radius6 fr' data-id='{{employee.choosedId}}' bindtap='bindBtnLoss'>报损</view>
+          </view>
+        </view>
+      </view>
+
+      <!-- <view class='height_50 padding_tb20 loadingBox flex vertical_center'>
+        <list-loadindg isShow="{{isShow}}"></list-loadindg>
+      </view> -->
+
+    </view>
+  </scroll-view>
+
+  <view class='footerBox margin_lr30 clearfix'>
+  <view class='btn_wechat clearfix text_fff text_center broder_radius6 fs_36 btnPrintVoucher' bindtap='bindUpdateBlankbill'>确认结束</view>
+    <!-- <view class='btn_wechat clearfix text_fff text_center broder_radius6 fs_36 btnPrintVoucher' bindtap='bindToPrintVoucher'>打印凭证</view> -->
+  </view>
+</view>

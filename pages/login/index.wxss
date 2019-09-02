@@ -1,0 +1,36 @@
+/* pages/login/index.wxss */
+@import '../common/global.wxss';
+
+.wecomeLogo image{
+  width: 200px;
+  height: 200px;
+}
+ .btnWeChatLogin{
+   height: 100rpx;
+   line-height: 100rpx;
+ }
+ .btnWeChatLogin image{
+   width: 51rpx;
+   height: 43rpx;
+   position: relative;
+   left: -20rpx;
+ }
+
+.otherLoginLine{
+  margin: 60rpx auto;
+}
+.otherLoginLine text{
+  width: 244rpx;
+}
+.otherLoginLine image{
+  width: 221rpx;
+  height: 3rpx;
+}
+ .therLoginIcon image{
+   width: 57rpx;
+   height: 58rpx;
+ }
+
+.therLoginIcon{
+  margin: 0 auto;
+}

@@ -1,0 +1,107 @@
+/* pages/boss/operation/shipment/shipment_finish/index.wxss */
+@import "../../../../common/global.wxss";
+@import "../../../../common/table.wxss";
+
+.listHead {
+  line-height: 60rpx;
+}
+.width_1666P{
+  flex:1
+}
+.tableListBox{
+  flex: 5;
+  border-right:0;
+}
+
+.tableListBox .tr:nth-child(even){
+  background: #ffffff;
+}
+.tableListBox .tr:nth-child(odd){
+  background: #f4f4f4;
+}
+.tableListBox .tr:nth-child(even) .td,.listHead .td{
+  border-bottom:0;
+}
+
+.reportLossBox{
+  padding: 30rpx;
+}
+.reportLossBox .td:nth-child(1){
+  flex: 1.4
+}
+.reportLossBox .td:nth-child(3){
+  flex: 0.6
+}
+.reportLossBox .td:nth-child(2),.reportLossBox .td:nth-child(4){
+  flex: 1
+}
+
+.chooseLossBox{
+  height: 50rpx;
+  line-height: 45rpx;
+} 
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;
+   width: 16rpx; 
+   height: 16rpx; 
+   text-align: center;
+   font-size:0rpx; /* 对勾大小 去掉 */
+   background-color: #409efe; 
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+radio{
+  border-radius: 50%;
+  width: 28rpx;/* 最好是4的倍数，不然会不在中间 */
+  height: 28rpx;
+  line-height: 28rpx;
+  border: 2rpx solid #409efe;/* 设置边框（外圆） */
+  font-size: 0;/* 让边框重合 */
+  position: relative;
+  top: -10rpx;
+}
+radio .wx-radio-input{
+   border-radius: 50%;
+   width: 28rpx;
+   height: 28rpx; 
+   border: none;/* 替换边框（隐藏原有边框） */
+}
+.lossCodeInput{
+  width: 220rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  min-height: 28rpx;
+  margin-left: 30rpx;
+}
+
+.tableLostBox{
+  margin-top: 5rpx;
+}
+.chooseEmployeeTitle{
+  padding: 15rpx;
+}
+.employeeList .employeeItem{
+  width: 20%;
+  height: 42rpx;
+  line-height: 42rpx;
+  margin:0 0rpx 20rpx 36rpx;
+}
+.employeeList .employeeItem:nth-child(4n-3){
+  margin-left: 0;
+}
+
+.btnLossBox{
+  height: 50rpx;
+}
+.btnLoss{
+  width: 110rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.footerBox{
+  margin-top: 30rpx; 
+}
+.btnPrintVoucher{
+  height: 88rpx;
+  line-height: 88rpx;
+}

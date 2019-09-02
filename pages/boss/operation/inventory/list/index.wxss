@@ -1,0 +1,22 @@
+/* pages/boss/operation/inventory/list/index.wxss */
+@import "../../../../common/global.wxss";
+
+.listBox{
+  padding: 10rpx 0;
+}
+.list{
+  border: 1rpx solid #409efe;
+}
+.listLeftBox{
+  min-height: 98rpx;
+  width: 472rpx;
+  line-height: 49rpx;
+  flex: 3;
+}
+.listRightBox{
+  min-height: 98rpx;
+  /* height: 100%; */
+  width: 154rpx;
+  line-height: 98rpx;
+  flex: 1;
+}

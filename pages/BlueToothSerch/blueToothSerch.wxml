@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="content">
+  <text class="status">适配器状态：{{ status }}</text>
+  <text class="sousuo">是否搜索：{{ sousuo }}</text>
+  <text class="msg">消息：{{ msg }} </text>
+  <text class="msg1">消息：{{ msg1 }}</text>
+  <button type="primary" class="button" bindtap="lanya1">初始化蓝牙适配器</button>
+  <button type="primary" class="button" bindtap="lanya3">连接电子秤</button>
+  <button type="primary" class="button" bindtap="lanya9">启用设备特征值变化时的notify</button>
+  <button type="primary" class="button" bindtap="lanya10">接收称重信息</button>
+  <view class="section">
+    <text class="status">体重：{{ jieshou }} Kg</text>
+  </view>
+  <button type="primary" class="button" bindtap="lanya0">0断开蓝牙连接</button>
+</view>
+

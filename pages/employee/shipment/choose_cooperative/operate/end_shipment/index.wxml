@@ -1,0 +1,46 @@
+<!--pages/employee/shipment/choose_cooperative/operate/end_shipment/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+
+  <scroll-view scroll-y>
+    <view class='listBox margin_lr30 fs_28'>
+      <view class='btn_wechat clearfix text_fff text_center broder_radius6 fs_28 btnToIndex fl' data-reason='{{reasonValue}}' bindtap='bindToIndex'>返回首页</view>
+      <view class='shipmentBox clear'>
+        <view class='fs_36 text_center headerBox'>结束出货</view>
+        <view class='text_right fs_28 cooperativeBox text_666666'>合作商：<text class='cooperativeName text_333333'>{{cooperativeName}}</text> </view>
+        <view class='table clear margin_b30 shadow_e2e2e2' wx:for="{{shipmentList}}" wx:key="key">
+          <view class='tr tableHead'>
+            <view class='th colspan bg_e0e3f6' style='flex:6;align-items: left;'>
+              <view class='clearfix width_100'>
+                <view class='fl'>
+                  <text class='fl'>{{item.name}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class='tr'>
+            <view class='td index'>标记</view>
+            <view class='td index'>数量</view>
+          </view>
+          <view class='tr' wx:for="{{item.list}}" wx:key="lkey" wx:for-item="fLT" wx:if="{{index != 'total'}}">
+            <view class='td'>{{index}}</view>
+            <view class='td'>{{fLT}}</view>
+          </view>
+          <view class='tr tableHead'>
+            <view class='th colspan bg_ffffff' style='flex:6;align-items: left;'>
+              <view class='clearfix width_100'>
+                <view class='fr text_333333'>合计：{{item.list.total}}箱</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='clearfix margin_tb30 shadow_e2e2e2 bg_ffffff integralBox' style='display:none'>
+        <view class='fl'>本次累计:</view>
+        <view class='fr'>80积分</view>
+      </view>
+
+    </view>
+  </scroll-view>
+
+</view>

@@ -1,0 +1,39 @@
+/* pages/boss/my/index.wxss */
+@import "../../common/global.wxss";
+.myBox{
+  padding: 40rpx 0 20rpx 0; 
+}
+.headerBox{
+  height: 184rpx;
+}
+.headerItem{
+  padding: 27rpx 30rpx 0 30rpx;
+}
+.headPortrait,.headPortrait image{
+  width: 130rpx;
+  height: 130rpx;
+}
+.userNamePhone{
+  line-height: 40rpx;
+}
+.userNamePhone text{
+  max-width: 330rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.perfectInformationBox{
+  line-height: 40rpx;
+}
+
+.infoListItemBox{
+  height: 100rpx;
+}
+.infoList{
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.icon_store{
+  width: 36rpx;
+  height: 37rpx;
+}

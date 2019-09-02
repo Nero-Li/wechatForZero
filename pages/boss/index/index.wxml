@@ -1,0 +1,92 @@
+<!--pages/boss/index/index.wxml-->
+
+<wxs module="filters" src="../../../utils/filter.wxs"></wxs>
+
+<view>
+  <view class='bg_f7f7f7'>
+    <!-- <view class='datePickerBox margin_lr30 flex vertical_center'>
+      <view class='datePicker width_100'>
+        <picker mode="date" value="{{date}}" end="{{cutOffTime}}" bindchange="bindDateStartChange">
+          <view class="picker">
+            <input type='text' disabled='disabled' value='{{dateStart}}' class='broder_color_ced1e2 broder_radius10 padding_l5 height_40 fs_24 text_999999' id='dateStartValue'></input>
+            <image src='../../../images/boss/icon_date.png' class='iconDate iconDateStart'></image>
+          </view>
+        </picker>
+      </view>
+
+      <view class='datePicker width_100'>
+        <picker mode="date" value="{{date}}" start="{{dateStart}}" end="{{cutOffTime}}" bindchange="bindDateEndChange">
+          <view class="picker">
+            <input type='text' disabled='disabled' value='{{dateEnd}}' class='broder_color_ced1e2 broder_radius10 padding_l5 height_40 fs_24 text_999999' id='dateEndValue'></input>
+            <image src='../../../images/boss/icon_date.png' class='iconDate iconDateEnd'></image>
+          </view>
+        </picker>
+      </view>
+
+    </view> -->
+  </view>
+
+  <view class='chartBox'>
+    <view class='shadow_e2e2e2 text_center'>
+      <text class='text_333333 fs_28'>{{chartsTitle}}卸货总数</text>
+      <scroll-view class='chartItem' scroll-x>
+        <view style='width:{{unloadingChartWidth}}px'>
+          <ec-canvas id="unloadingDomBar" canvas-id="unloadingBar" ec="{{ xiezaiDate }}"></ec-canvas>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='bg_f7f7f7 height_30'></view>
+    <view class='shadow_e2e2e2 text_center'>
+      <text class='text_333333 fs_28'>{{chartsTitle}}出货总数</text>
+      <scroll-view class='chartItem' scroll-x >
+        <view style='width:{{shipmentChartWidth}}px'>
+          <ec-canvas id="shipmentDomBar" canvas-id="shipmentBar" ec="{{ chuhuoDate }}"></ec-canvas>
+        </view>
+      </scroll-view>
+    </view>
+    
+  </view>
+
+  <view class='notFinishBillBox'>
+
+    <view class='text_center bg_f7f7f7 notFinishTitle'>
+      <text class='text_333333 fs_28'>未结束的账单</text>  
+    </view>
+    
+    <view class='BillData margin_lr30 shadow_e2e2e2 margin_b30' wx:for="{{bill.list}}" wx:key="key">
+
+      <navigator url='/pages/boss/bill/details/index?id={{item.id}}&type={{item.type}}&status={{item.status}}&csname={{item.csname}}&amount={{item.realAmount == null ? item.amount : item.realAmount}}'>
+        <view class='BillItem flex text_center fs_22'>
+          <view class='itemCommonBox margin_tb20 broderRight_color_ced1e2 flex vertical_center'>
+            <view class='width_100'>
+              <view class='text_ellipsis csName width_100'>{{item.csname}}</view>
+              <text class='fs_20 text_999999'>[ {{item.type == 1 ? '供应商' : '合作商'}} ]</text>
+            </view>
+          </view>
+          <view class='itemCommonBox margin_tb20 broderRight_color_ced1e2 flex vertical_center'>
+            <view class='width_100'>
+              <view class='text_ellipsis csName width_100'>{{item.quantity}}箱</view>
+              <text class='fs_20 text_999999'>[ {{item.type == 1 ? '卸货' : '出货'}}总数 ]</text>
+            </view>
+          </view>
+          <view class='itemCommonBox margin_tb20 broderRight_color_ced1e2 flex vertical_center'>
+            <view>
+              <view>{{filters.timeStamp(item.billDate,'month')}}</view>
+              <text class='fs_20 text_999999'>[ 账单生成时间 ]</text>
+            </view>
+          </view>
+          <view class='itemCommonBox flex vertical_center'>
+            <view class='text_ellipsis csName width_100'>{{item.realAmount ? item.realAmount : item.amount}}元</view>
+          </view>
+          <view class='itemCommonBox'>
+            <!-- 状态 0：未结清，1：未回款 -->
+            <view class='fs_24 text_fff bg_41a0fe btnOnClick'>{{item.status == 1 ? '未结清' : '未回款'}}</view>
+          </view>
+        </view>
+      </navigator>
+      
+    </view>
+
+  </view>
+
+</view>

@@ -1,0 +1,10 @@
+<!--pages/employee/shipment/index.wxml-->
+<view class='min_height100 bg_f7f7f7 flex vertical_center'>
+  <view class='margin_lr30 operationBox width_100'>
+    <navigator url="{{item.link}}" wx:for="{{shipmentList}}" wx:key="key" class='flex vertical_center {{item.bgClass}} text_fff fs_48 broder_radius10 operationItem'>
+      <image src="{{item.icon}}" class='operationIcon'></image>
+      <view>{{item.text}}</view>
+    </navigator>
+  </view>
+  <nav-employee class="employeeNav"></nav-employee>
+</view>

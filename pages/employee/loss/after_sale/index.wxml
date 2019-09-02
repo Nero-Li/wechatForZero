@@ -1,0 +1,85 @@
+<!--pages/employee/loss/after_sale/index.wxml-->
+<wxs module="filters" src="../../../../utils/filter.wxs"></wxs>
+<view class='bg_f7f7f7 min_height100'>
+
+  <view class='tabHeaderBox'>
+    <view class='tabHeader'>
+      <view class='tabNav flex vertical_center fs_28'>
+        <view class="{{item.active ? 'tabActive' : ''}}" wx:for="{{tabHeadArr}}" wx:key="index" bindtap='bindTabH' data-index='{{index}}'>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='listDataBox fs_28 text_666666'>
+
+    <nodata wx:if="{{noData}}"></nodata>
+    <view class='listItem broder_radius20' wx:for="{{listArr}}" wx:key="{{key}}">
+      <view class='listTitle margin_lr30 fs_26'>
+        <view class='fl fs_28 text_ellipsis'>{{item.customername}}售后订单</view>
+        <view class='fr'>{{filters.timeStamp(item.modifytime,'day','-')}}</view>
+      </view>
+      <view class='listConnet flex'>
+        <view class='imageBox flex vertical_center broder_radius10 margin_lr30 shadow_e2e2e2'>
+          <image src='../../../../images/logo.png'></image>
+        </view>
+        <view class='connetBox'>
+          <view class='flex'>品种：
+            <view class='textNmae text_ellipsis'>{{item.categroyname}}</view>
+          </view>
+          <view>数量：{{item.current}}</view>
+          <view>标记：{{item.marker}}</view>
+        </view>
+      </view>
+      <view class='listFooter margin_lr30 clearfix'>
+        <view class='fl fs_26 goodsNoClass'>{{item.goodsNo}}</view>
+        <view class='fs_26 fr btnStartSale' wx:if="{{item.status === '1'}}" bindtap='bindStartScanCode' data-status='{{item.status}}' data-goodsno='{{item.goodsNo}}' data-id='{{item.id}}' data-brokengoodsno='{{item.brokenGoodsNo}}' data-changegoodsno='{{item.changeGoodsNo}}' data-index='{{index}}'>{{item.statusName}}</view>
+        <view class='fs_26 fr btnSaling' wx:if="{{item.status === '0'}}" bindtap='bindStartScanCode' data-status='{{item.status}}' data-goodsno='{{item.goodsNo}}' data-id='{{item.id}}' data-brokengoodsno='{{item.brokenGoodsNo}}' data-changegoodsno='{{item.changeGoodsNo}}'  data-index='{{index}}'>{{item.statusName}}</view>
+        <view class='fs_26 fr btnSaled' wx:if="{{item.status === '-1'}}">{{item.statusName}}</view>
+      </view>
+    </view>
+    <!-- <view class='listItem broder_radius20'>
+      <view class='listTitle margin_lr30 fs_26'>
+        <view class='fl fs_28 text_ellipsis'>青松食品售后订单</view>
+        <view class='fr'>2019-07-07 11:22</view>
+      </view>
+      <view class='listConnet flex'>
+        <view class='imageBox flex vertical_center broder_radius10 margin_lr30 shadow_e2e2e2'>
+          <image src='../../../../images/logo.png'></image>
+        </view>
+        <view class='connetBox'>
+          <view class='flex'>品种：
+            <view class='textNmae text_ellipsis'>鸡鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋蛋</view>
+          </view>
+          <view>数量：1</view>
+          <view>标记：7</view>
+        </view>
+      </view>
+      <view class='listFooter margin_lr30'>
+        <view class='fs_26 fr btnSaling'>正在售后</view>
+      </view>
+    </view>
+    <view class='listItem broder_radius20'>
+      <view class='listTitle margin_lr30 fs_26'>
+        <view class='fl fs_28 text_ellipsis'>青松食品售后订单</view>
+        <view class='fr'>2019-07-07 11:22</view>
+      </view>
+      <view class='listConnet flex'>
+        <view class='imageBox flex vertical_center broder_radius10 margin_lr30 shadow_e2e2e2'>
+          <image src='../../../../images/logo.png'></image>
+        </view>
+        <view class='connetBox'>
+          <view class='flex'>品种：
+            <view class='textNmae text_ellipsis'>鸡鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋蛋</view>
+          </view>
+          <view>数量：1</view>
+          <view>标记：7</view>
+        </view>
+      </view>
+      <view class='listFooter margin_lr30'>
+        <view class='fs_26 fr btnSaled'>完成售后</view>
+      </view>
+    </view> -->
+
+  </view>
+
+</view>

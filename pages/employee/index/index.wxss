@@ -1,0 +1,4 @@
+/* pages/employee/index/index.wxss */
+@import "../my/index.wxss";
+@import "../loss/index.wxss";
+@import "../../component/tabnav/index.wxss";

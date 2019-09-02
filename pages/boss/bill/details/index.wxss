@@ -1,0 +1,104 @@
+/* pages/boss/bill/details/index.wxss */
+@import "../../../common/global.wxss";
+@import "../../../common/table.wxss";
+
+.listHead {
+  height: 60rpx;
+  padding: 30rpx 0 10rpx 0;
+  position: relative;
+}
+.headLeftBox{
+  max-height: 100rpx;
+  overflow-y: auto;
+}
+.headCenterBox{
+  margin-left: 1%;
+}
+.btnBillDetails{
+  width: 130rpx;
+  line-height: 48rpx;
+}
+
+.billListBox{
+  margin: 20rpx 0 40rpx 0;
+}
+.btnBillEditBox{
+  min-height: 45rpx;
+  width: 100rpx;
+}
+.btnBillEditBox image{
+  width:37rpx;
+  height:34rpx;
+}
+.billListBox .th{
+  min-height:60rpx;line-height:60rpx;
+}
+.billListBox .td{
+  min-height:54rpx;line-height:54rpx;
+}
+.tableListBox .tr:nth-child(even){
+  background: #ffffff;
+}
+.tableListBox .tr:nth-child(odd){
+  background: #f4f4f4;
+}
+
+.reportLossBox .td:nth-child(1){
+  flex: 0.85
+}
+.reportLossBox .td:nth-child(2){
+  flex: 1.6
+}
+.reportLossBox .td:nth-child(3){
+  flex: 0.5
+}
+.reportLossBox .td:nth-child(4){
+  flex: 0.8
+}
+.reportLossBox .td:nth-child(5){
+  flex: 1.25
+}
+
+.reasonListBox{
+  max-height: 320rpx;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.btnLossBox{
+  width: 66rpx;
+  line-height: 48rpx;
+}
+.lossList{
+  border: 1rpx solid #f66b6e;
+  border-right:0;
+  border-bottom:0;
+  width: 90%;
+  font-size: 18rpx;
+}
+.lossList .td{
+  min-height: 46rpx;
+  line-height: 46rpx;
+  border-bottom:1rpx solid #f66b6e;
+  border-right:1rpx solid #f66b6e;
+
+}
+.lossList .td:nth-child(1){
+  flex: 1.45
+}
+.lossList .td:nth-child(2){
+  flex: 0.75
+}
+.lossList .td:nth-child(3){
+  flex: 0.9
+}
+.lossList .td:nth-child(4){
+  flex: 1.1
+}
+
+.footerBox{
+  margin-top: 30rpx; 
+}
+.btnSettleAccountsBox{
+  height: 88rpx;
+  line-height: 88rpx;
+}

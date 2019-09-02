@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "list-loadindg": "../../../../../component/loading/index",
+    "nodata": "/pages/component/no_data/index"
+  }
+}

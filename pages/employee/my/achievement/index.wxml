@@ -1,0 +1,86 @@
+<!--pages/employee/my/achievement/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+  <view class='myBox'>
+    <view class='shadow_e2e2e2 width_100 bg_ffffff headerBox' bindtap='bindToPerfectInformation'>
+      <view class='flex vertical_center headerItem'>
+        <view class='headPortrait'>
+          <image src='{{avatarUrl}}' class='broder_radius50_bai'></image>
+        </view>
+        <view class='margin_lr30 text_333333 userNamePhone width_100'>
+          <text class='block fs_28'>德华</text>
+          <text class='block text_666666 fs_22'>18963961111</text>
+        </view>
+        <view class='text_333333 vertical_center width_100 perfectInformationBox text_right'>
+          <text class='fs_28'>积分：1550</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='centerBox'>
+      <view class='shadow_e2e2e2 flex vertical_center margin_t30 bg_ffffff '>
+        <view class='margin_lr30 fs_28 text_333333 flex vertical_center width_100 historyBox'>
+          <view class='width_100 leftListBox'>历史累计：</view>
+          <view class='rightListBox'>
+            <view class='broder_bottomColor_cdcdcd flex text_center'>
+              <text class='block width_33 margin_lr30'>卸货</text>
+              <text class='block width_50'>150车</text>
+            </view>
+            <view class='broder_bottomColor_cdcdcd flex text_center'>
+              <text class='block width_33 margin_lr30'>出货</text>
+              <text class='block width_50'>150车</text>
+            </view>
+            <view class='flex text_center'>
+              <text class='block width_33 margin_lr30'>累计</text>
+              <text class='block width_50'>150车</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='shadow_e2e2e2 flex vertical_center margin_t30 bg_ffffff '>
+        <view class='margin_lr30 fs_28 text_333333 flex vertical_center width_100 historyBox'>
+          <view class='width_100 leftListBox'>本月业绩：</view>
+          <view class='rightListBox'>
+            <view class='broder_bottomColor_cdcdcd flex text_center'>
+              <text class='block width_33 margin_lr30'>卸货</text>
+              <text class='block width_50'>150车</text>
+            </view>
+            <view class='broder_bottomColor_cdcdcd flex text_center'>
+              <text class='block width_33 margin_lr30'>出货</text>
+              <text class='block width_50'>150车</text>
+            </view>
+            <view class='broder_bottomColor_cdcdcd flex text_center'>
+              <text class='block width_33 margin_lr30'>累计</text>
+              <text class='block width_50'>150车</text>
+            </view>
+            <view class='flex text_center'>
+              <text class='block width_33 margin_lr30'>积分</text>
+              <text class='block width_50'>550分</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='centerBox shadow_e2e2e2 bg_ffffff'>
+      <view class='flex vertical_center margin_t30 infoListItemBox' bindtap='bindSeeHistroyAchievement'>
+        <view class='margin_lr30 fs_28 text_333333 flex vertical_center width_100 infoList'>
+          <view class='width_100'>查看历史业绩</view>
+          <image src='../../../../images/icon_arrows.png' class='icon_arrows margin_l15 {{isSHowHistroy ? "rotate_negative_90deg" : "rotate_90deg"}}'></image>
+        </view>
+      </view>
+      <view class='achievementListBox' wx:if='{{isSHowHistroy}}'>
+        <view class='achievementList broder_top_cdcdcd'>
+          <view class='achievementItem fs_24 text_666666 margin_lr30 flex'>
+            <text class='block'>8月</text>
+            <text class='block text_center'>卸货：<text class='text_333333'>14车</text></text>
+            <text class='block text_center'>出货：<text class='text_333333'>18单</text></text>
+            <text class='block text_right'>累计：<text class='text_333333'>585箱</text></text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

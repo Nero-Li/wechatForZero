@@ -1,0 +1,31 @@
+<!--pages/boss/operation/inventory/loss_management/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+  <view class='padding_tb30'>
+    <view class='BillData margin_lr30 shadow_e2e2e2 margin_b30 bg_ffffff' wx:for="{{bill.list}}" wx:key="key" bindtap='bindToDetails' data-storename='{{item.storeName}}'>
+      <view class='BillItem flex text_center fs_22'>
+        <view class='itemCommonBox margin_tb20 broderRight_color_ced1e2 flex vertical_center'>
+          <view>
+            <view>{{item.storeName}}{{index+1}}</view>
+            <text class='fs_20 text_999999'>[ {{item.merchant}} ]</text>
+          </view>
+        </view>
+        <view class='itemCommonBox margin_tb20 broderRight_color_ced1e2 flex vertical_center'>
+          <view>
+            <view>{{item.code}}</view>
+            <text class='fs_20 text_999999'>[ 标记码 ]</text>
+          </view>
+        </view>
+        <view class='itemCommonBox margin_tb20 broderRight_color_ced1e2 flex vertical_center'>
+          <view>
+            <view>{{item.date}}</view>
+            <text class='fs_20 text_999999'>[ 报损时间 ]</text>
+          </view>
+        </view>
+        
+        <view class='itemCommonBox'>
+          <view class='fs_24 text_fff bg_41a0fe btnOnClick'>已回收</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

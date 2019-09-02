@@ -1,0 +1,44 @@
+<!--pages/employee/shipment/choose_cooperative/operate/out_stock/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+
+  <scroll-view scroll-y>
+    <view class='listBox margin_lr30 fs_28'>
+
+      <view class='shipmentBox clear'>
+        <view class='fs_36 text_center headerBox'>已出货物</view>
+        <view class='text_right fs_28 cooperativeBox text_666666'>合作商：<text class='cooperativeName text_333333'>{{cooperativeName}}</text> </view>
+        <view class='table clear margin_b30 shadow_e2e2e2' wx:for="{{shipmentList}}" wx:key="key">
+          <view class='tr tableHead'>
+            <view class='th colspan bg_e0e3f6' style='flex:6;align-items: left;'>
+              <view class='clearfix width_100'>
+                <view class='fl'>
+                  <text class='fl'>{{item.name}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class='tr'>
+            <view class='td index'>标记</view>
+            <view class='td index'>数量</view>
+          </view>
+          <view class='tr' wx:for="{{item.list}}" wx:key="lkey" wx:for-item="fLT" wx:if="{{index != 'total'}}">
+            <view class='td'>{{index}}</view>
+            <view class='td'>{{fLT}}</view>
+          </view>
+          <view class='tr tableHead'>
+            <view class='th colspan bg_ffffff' style='flex:6;align-items: left;'>
+              <view class='clearfix width_100'>
+                <view class='fr text_333333'>合计：{{item.list.total}}箱</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='height_50 padding_tb20 loadingBox flex vertical_center'>
+        <list-loadindg isShow="{{isShow}}"></list-loadindg>
+      </view> -->
+
+    </view>
+  </scroll-view>
+
+</view>

@@ -1,0 +1,52 @@
+<!--pages/employee/shipment/choose_cooperative/operate/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+  <view class='margin_lr30'>
+    <view class='headerBox clearfix'>
+      <view class='btn_wechat clearfix text_fff text_center broder_radius6 fs_28 btnAlreadyShipment fl' data-reason='{{reasonValue}}' bindtap='bindToOutStock'>已出货物</view>
+      <view class='bg_f66b6e text_fff text_center broder_radius6 fs_28 btnAlreadyShipment margin_l15 fl' data-reason='{{reasonValue}}' bindtap='bindToEndShipment' wx:if="{{status != 3}}">结束出货</view>
+      <view class='text_right padding_tb30 fs_28 fr'>当前出货总数：<text class='totalNumber'>{{totalNumber}}箱</text></view>
+    </view>
+    <scroll-view scroll-y style='height:{{tableTrListHeight}};' class=''>
+      <view class='listBox fs_28 min_height100 {{shipmentList.length == 0 ? "flex vertical_center" : ""}}'>
+
+        <view class='shipmentBox clear width_100' wx:if="{{shipmentList.length > 0}}">
+          <view class='table clear margin_b30 shadow_e2e2e2' wx:for="{{shipmentList}}" wx:key="key">
+            <view class='tr tableHead'>
+              <view class='th colspan bg_e0e3f6' style='flex:6;align-items: left;'>
+                <view class='clearfix width_100'>
+                  <view class='fl'>
+                    <text class='fl'>{{item.name}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class='tr'>
+              <view class='td index'>标记</view>
+              <view class='td index'>数量</view>
+            </view>
+            <view class='tr' wx:for="{{item.list}}" wx:key="lkey" wx:for-item="fLT" wx:if="{{index != 'total'}}" >
+              <view class='td'>{{index}}</view>
+              <view class='td'>{{fLT}}</view>
+            </view>
+            <view class='tr tableHead'>
+              <view class='th colspan bg_ffffff' style='flex:6;align-items: left;'>
+                <view class='clearfix width_100'>
+                  <view class='fr text_333333'>合计：{{item.list.total}}箱</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='btn_wechat text_fff text_center broder_radius6 fs_46 btnShipment width_100' data-reason='{{reasonValue}}' bindtap='bindStartShipment' wx:if="{{shipmentList.length == 0 && status != 3}}">开始出货</view>
+      </view>
+      
+    </scroll-view>
+
+  </view>
+  <view class='footerBox margin_lr30 clearfix'>
+    <view class='btnShipment'>
+      <view class='btn_wechat clearfix text_fff text_center broder_radius6 fs_46' data-reason='{{reasonValue}}' bindtap='bindStartShipment' wx:if="{{shipmentList.length > 0 && status != 3}}">继续出货</view>
+    </view>
+    <!-- <view class='bg_41a0fe clearfix text_fff text_center broder_radius6 fs_46 btnShipment' data-reason='{{reasonValue}}' bindtap='bindToOutStock'>结束任务</view> -->
+  </view>
+</view>

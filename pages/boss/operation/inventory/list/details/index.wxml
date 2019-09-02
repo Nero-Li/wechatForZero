@@ -1,0 +1,28 @@
+<!--pages/boss/operation/inventory/list/details/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+  <view class='listBox margin_lr30 fs_28'>
+    <view class='listHead fr text_666666'>标记：<text>{{marker}}</text></view>
+
+    <view class='table clear shadow_e2e2e2'>
+      <view class='tr tableHead'>
+        <view class='th indexWidth btnbg_409efe'>序号</view>
+        <view class='th width_33 btnbg_409efe'>标记</view>
+        <view class='th width_33 btnbg_409efe'>实重</view>
+        <view class='th width_33 btnbg_409efe'>来源</view>
+      </view>
+      <scroll-view scroll-y bindscrolltolower='refreshListData' style='max-height:{{tableTrListHeight}}'>
+        <view class='tr' wx:for='{{list}}' wx:key='key'>
+          <view class='td index indexWidth'>{{index+1}}</view>
+          <view class='td width_33'>{{item.mode}}</view>
+          <view class='td width_33'>{{item.weight}}</view>
+          <view class='td width_33'>{{item.supplierName}}</view>
+        </view>
+      </scroll-view>
+      <nodata wx:if="{{noData}}"></nodata>
+    </view>
+
+    <view class='height_50 padding_tb20 loadingBox flex vertical_center'>
+      <list-loadindg isShow="{{isShow}}"></list-loadindg>
+    </view>
+  </view>
+</view>

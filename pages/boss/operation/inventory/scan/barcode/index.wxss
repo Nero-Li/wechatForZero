@@ -1,0 +1,66 @@
+/* pages/boss/operation/inventory/scan/barcode/index.wxss */
+@import "../../../../../common/global.wxss";
+@import "../../../../../common/table.wxss";
+
+.listHead {
+  height: 60rpx;
+}
+
+.tableListBox .tr:nth-child(even){
+  background: #ffffff;
+}
+.tableListBox .tr:nth-child(odd){
+  background: #f4f4f4;
+}
+
+.reportLossBox .td:nth-child(1){
+  flex: 0.85
+}
+.reportLossBox .td:nth-child(2){
+  flex: 1.6
+}
+.reportLossBox .td:nth-child(3){
+  flex: 0.5
+}
+.reportLossBox .td:nth-child(4){
+  flex: 0.8
+}
+.reportLossBox .td:nth-child(5){
+  flex: 1.25
+}
+
+.searchInputP{
+  padding-left: 7.5%;
+}
+.reasonListBox{
+  max-height: 320rpx;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.wordLH{
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #6992c8;
+  border: 1rpx solid #3876c3;
+}
+
+.chooseEmployeeTitle{
+  padding: 15rpx;
+}
+.employeeList .employeeItem{
+  width: 20%;
+  height: 42rpx;
+  line-height: 42rpx;
+  margin:0 0rpx 20rpx 36rpx;
+}
+.employeeList .employeeItem:nth-child(4n-3){
+  margin-left: 0;
+}
+
+.footerBox{
+  margin-top: 30rpx; 
+}
+.btnLossBox{
+  height: 88rpx;
+  line-height: 88rpx;
+}

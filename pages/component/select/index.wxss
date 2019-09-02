@@ -1,0 +1,67 @@
+/* pages/component/select/index.wxss */
+@import '../../common/global.wxss';
+.com-selectBox{
+  width: 180rpx;
+}
+.com-sContent{
+  border: 1rpx solid #e2e2e2;
+  background: white;
+  position: relative;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.com-sImg{
+  position: absolute;
+  right: 10rpx;
+  top: 13rpx;
+  transition: all .3s ease;
+}
+.com-sTxt{
+  width: 150rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding:0 20rpx 0 6rpx;
+}
+.com-sList{
+  background: white;
+  /* width: inherit; */
+  position: absolute;
+  border: 1rpx solid #e2e2e2;
+  border-top: none;
+  box-sizing: border-box;
+  z-index: 3;
+  width: 180rpx;
+  max-height: 210rpx;
+}
+.com-sList_type2{
+  background: white;
+  /* width: inherit; */
+  position: absolute;
+  border: 1rpx solid #e2e2e2;
+  border-top: none;
+  box-sizing: border-box;
+  z-index: 3;
+  width: 360rpx;
+}
+.ListType2item{
+  width: 177rpx;
+  max-height: 210rpx;
+}
+.ListType2item:first-child{
+  border-right: 1rpx solid #e2e2e2;
+}
+.com-sItem{
+  width: 150rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-top: 1rpx solid #e2e2e2;
+  padding:0 20rpx 0 6rpx;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.com-sItem:first-child{
+  border-top: none;
+}

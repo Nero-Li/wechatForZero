@@ -1,0 +1,41 @@
+<!--pages/boss/operation/inventory/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+
+  <view class='chartBox shadow_e2e2e2 bg_ffffff'>
+    <view class='chartHeaderBox flex vertical_center bg_f7f7f7'>
+      <text class='width_100 block text_41a0fe fs_48 text_center padding_tb30'>库存图表</text>
+      <view class='chartBtnBox text_center flex vertical_center margin_lr30'>
+        <view class='fl fs_24 bg_41a0fe broder_radius6 text_fff btnLossManagement' bindtap='bindToLossManagement'>报损管理</view>
+        <view class='fl fs_36 bg_f66b6e broder_radius6 text_fff btnAdd margin_l15' bindtap='bindAddLoss'>
+            +
+        </view>
+        
+      </view>
+      <view class='chooseLossBox shadow_e2e2e2' wx:if="{{addLoss}}">
+        <view class='text_fff fs_24 flex vertical_center' wx:for="{{addLossArr}}" wx:key="key" bindtap='bindLossChange' data-value='{{index}}'>
+        <image src="{{item.src}}"></image>
+        <text class='padding_lr5'>{{item.name}}</text>
+      </view>
+      </view>
+    </view>
+    <scroll-view class='chartItemBox' scroll-x >
+      <view class='chartItem' style='width:{{chartItemWidth}}px'>
+        <ec-canvas class="inventoryDomBar" canvas-id="unloadingBar" ec="{{ xiezaiDate }}"></ec-canvas>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class='centerBox padding_tb20'>
+    <view class='bg_ffffff shadow_e2e2e2 margin_t30 listItemBox' wx:for="{{optionObj.xAxis.data}}" wx:key="key" bindtap='bindToList' data-name='{{item}}' data-id='{{optionObj.id[index]}}'>
+      <view class='listItem margin_lr30 fs_24 clearfix'>
+        <view class='bgColorBox fl'>
+          <view class='broder_radius6 bgColor fr' style='background:{{colorList[index] ? colorList[index] : "#26C0C0"}}'></view>
+        </view>
+        <view class='fl width_150rpx'>{{item}}</view>
+        <view class='fl margin_lr30'>库存：{{optionObj.series[0].data[index]}}箱</view>
+        <view class='fr'><image src='../../../../images/icon_arrows.png'></image></view>
+      </view>
+    </view>
+  </view>
+
+</view>

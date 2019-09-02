@@ -1,0 +1,11 @@
+/* pages/boss/operation/inventory/list/details/index.wxss */
+@import "../../../../../common/global.wxss";
+@import "../../../../../common/table.wxss";
+
+.listHead{
+  height: 64rpx;
+  line-height: 64rpx;
+}
+.listBox .th{
+  color: #fff;
+}

@@ -1,0 +1,6 @@
+<!--pages/component/no_data/index.wxml-->
+<view class="noDataBox width_100 flex vertical_center">
+  <!-- <image></image> -->
+  <view class='text_666666 fs_24'>暂无数据</view>
+  <slot></slot>
+</view>

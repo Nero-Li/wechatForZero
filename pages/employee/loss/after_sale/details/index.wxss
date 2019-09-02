@@ -1,0 +1,51 @@
+/* pages/employee/loss/after_sale/details/index.wxss */
+@import "../../../../common/global.wxss";
+@import "../../../../common/table.wxss";
+
+.listHead {
+  padding:80rpx 0 10rpx 0; 
+  height: 60rpx;
+}
+
+.tableListBox .tr:nth-child(even){
+  background: #ffffff;
+}
+.tableListBox .tr:nth-child(odd){
+  background: #f4f4f4;
+}
+
+.reportLossBox .td:nth-child(1){
+  flex: 0.7
+}
+.reportLossBox .td:nth-child(2){
+  flex: 1
+}
+.reportLossBox .td:nth-child(3){
+  flex: 1.1
+}
+.reportLossBox .td:nth-child(4){
+  flex: 1.2
+}
+
+.searchInputP{
+  padding-left: 7.5%;
+}
+.reasonListBox{
+  max-height: 320rpx;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.wordLH{
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #6992c8;
+  border: 1rpx solid #3876c3;
+}
+
+.footerBox{
+  margin-top: 30rpx; 
+}
+.btnLossBox{
+  height: 88rpx;
+  line-height: 88rpx;
+}

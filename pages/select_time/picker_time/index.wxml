@@ -1,0 +1,5 @@
+<view class="tarInput" bindtap='selsectdate'>
+    <text class='textleft'>上牌时间</text>
+    <input type="text" name="date" id="date" placeholder="选择上牌日期" disabled='true' value='{{year}}{{line}}{{month}}'></input>
+    <i class="iconfont icon-right je-texticon"></i>
+  </view>

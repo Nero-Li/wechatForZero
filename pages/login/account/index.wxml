@@ -1,0 +1,17 @@
+<!--pages/login/account/index.wxml-->
+<view class='bg'>
+
+  <text class='text_fff fs_48 inline_block width_100 text_center padding_t100'>账号登录</text>
+
+  <view class='margin_lr30 margin_t45'>
+    <input type='text' maxlength='12' class='text_fff fs_28 bg_283444 height_74 broder_radius10  broder_color_455469 padding_lr5 margin_b35' placeholder='手机号' placeholder-class='text_b8b8b8 fs_28' bindinput='bindChangePhone' bindconfirm='bindAccount'></input>
+    <input type='password' class='text_fff fs_28 bg_283444 height_74 broder_radius10  broder_color_455469 padding_lr5 margin_b35' placeholder='输入密码' placeholder-class='text_b8b8b8 fs_28' bindinput='bindChangePwd' bindconfirm='bindAccount'></input>
+    <text class='text_b8b8b8 fs_28 block text_right margin_lr30'>忘记密码</text>
+  </view>
+
+  <view>
+   <button class='text_fff fs_46 broder_radius100 btnbg_409efe margin_lr30 margin_t45 flex vertical_center btnAccount' bindtap="bindAccount">登录</button>
+   <button class='text_fff fs_46 broder_radius100 btn_wechat margin_lr30 margin_t45 flex vertical_center btnAccount' bindtap="toWeChatLogin">返回微信登录</button>
+  </view>
+
+</view>

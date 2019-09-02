@@ -1,0 +1,12 @@
+<!--pages/boss/operation/index.wxml-->
+
+<view class='margin_lr30 operationBox'>
+  <view class='fs_28 flex vertical_center bg_41a0fe broder_radius6 text_center text_fff btnSelfLoss' bindtap='bindToSelfLoss'>
+    <image src='../../../images/icon_self_destruction.png'></image>
+    <text class=''>自损</text>
+  </view>
+  <navigator url="{{item.link}}" wx:for="{{list}}" wx:key="key" class='flex vertical_center {{item.bgClass}} text_fff fs_48 broder_radius10 operationItem'>
+    <image src="{{item.icon}}" class='operationIcon'></image>
+    <view>{{item.text}}</view>
+  </navigator>
+</view>

@@ -1,0 +1,13 @@
+<!--pages/component/loading/index.wxml-->
+<view class="loader-inner line-spin-fade-loader" wx:if="{{isShow}}">
+  <view></view>
+  <view></view>
+  <view></view>
+  <view></view>
+  <view></view>
+  <view></view>
+  <view></view>
+  <view></view>
+  {{loading}}
+</view>
+

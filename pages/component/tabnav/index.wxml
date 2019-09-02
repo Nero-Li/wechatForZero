@@ -1,0 +1,15 @@
+<!--pages/component/tabnav/index.wxml-->
+<view class="navBox">  
+
+  <view class="tab-bar flex text_center vertical_center" style="color: {{navItemData.color}}; background: {{navItemData.backgroundColor}}; {{navItemData.position=='top'? 'top: 0' : 'bottom: 0'}}; {{navItemData.borderStyle? (navItemData.position=='top'? 'border-bottom: solid 1px '+navItemData.borderStyle + ';' : 'border-top: solid 1px '+navItemData.borderStyle + ';') : ''}}">  
+    <block wx:for="{{navItemData.list}}" wx:key="pagePath">  
+      <navigator url="{{item.pagePath}}" open-type="reLaunch" reLaunch="true" class="{{item.clas}} width_100 navItem" style="{{item.active? 'color: '+(item.selectedColor? item.selectedColor : navItemData.selectedColor) : ''}}">  
+        <image src="{{item.selectedIconPath}}" wx:if="{{item.active}}" class="img"></image>  
+        <image src="{{item.iconPath}}" wx:if="{{!item.active}}" class="img"></image>
+        <text class='fs_24'>{{item.text}}</text>  
+      </navigator>  
+    </block>
+    <view class="clear"></view>  
+  </view>
+  
+</view>

@@ -1,0 +1,28 @@
+/* pages/employee/shipment/choose_cooperative/operate/out_stock/index.wxss */
+@import "../../../../../common/global.wxss";
+@import "../../../../../common/table.wxss";
+
+.tableHead{
+  height: 60rpx;
+}
+.headerBox{
+  padding: 50rpx 0 20rpx 0;
+}
+.cooperativeBox{
+  padding-bottom: 20rpx;
+}
+.cooperativeName{
+  font-weight: 600;
+}
+.recoveryBox .table .td,.shipmentBox .table .td{
+  width: 100%
+}
+.recoveryBox .tr:nth-child(even),.shipmentBox .tr:nth-child(even){
+  background: #ffffff
+}
+.recoveryBox .tr:nth-child(odd),.shipmentBox .tr:nth-child(odd){
+  background: #f4f4f4
+}
+.lossReason{
+  margin: 20rpx 0 100rpx 0;
+}

@@ -1,0 +1,85 @@
+<!--pages/boss/operation/disburden/index.wxml-->
+<view class='bg_f7f7f7 min_height100'>
+
+  <view class='headerBox width_100 broder_bottomColor_cdcdcd clearfix'>
+    <scroll-view class='tabBox fl margin_lr30' scroll-x scroll-into-view='id{{task.index}}' scroll-with-animation="true"  bindscrolltolower='refreshListData' data-scroll='taskData' style='width:370rpx;height:70rpx;'>
+      <view class='connentBox clearfix' style='width:{{connentBoxWidth}}px'>
+        <view class='tabItem fs_24 text_center fl {{item.active ? "text_41a0fe broder_bottomColor_41a0fe": ""}}' wx:for="{{task.list}}" wx:key="key" data-state='{{index}}_{{item.active}}' id='id{{index}}' bindtap='bindTabTask'>{{item.cussupName}}</view>
+      </view>
+    </scroll-view>
+    <view class='cancelTask fs_46 fl text_666666' bindtap='bindAddTask'>+</view>
+    <view class='cancelTask fs_24 fr text_41a0fe' bindtap='bindCancelCurrentTask' data-type='cancel' wx:if="{{task.list[task.index].status == 0 || task.list[task.index].status == 3}}">取消卸货</view>
+    <view class='cancelTask fs_24 fr text_41a0fe' bindtap='bindCancelCurrentTask' data-type='suspend' wx:if="{{task.list[task.index].status == 0}}">暂停卸货</view>
+    <view class='cancelTask fs_24 fr text_41a0fe' bindtap='bindCancelCurrentTask' data-type='continue' wx:if="{{task.list[task.index].status == 3}}">继续卸货</view>
+    <view class='cancelTask fs_24 fr text_41a0fe' bindtap='bindStartTask' wx:if="{{task.list[task.index].status != 0 && task.list[task.index].status != 3}}">开始卸货</view>
+    
+  </view>
+
+  <view class='cneterContentBox margin_lr30'>
+    <view class='centerHeadBox fs_24'>
+      <view class='fl text_333333 text_ellipsis supplierNameW' wx:if="{{task.list[task.index].status == 0 || task.list[task.index].status == 3}}">供应商：{{task.list[task.index].cussupName}}</view>
+      <view class='fl text_333333 text_ellipsis supplierNameW' wx:if="{{task.list[task.index].status != 0 && task.list[task.index].status != 3}}"><text class='fl margin_l10'>供应商：</text>
+        <view style='padding-top:20rpx;'>
+          <select 
+            prop-array='{{supplierList.list}}' 
+            selectType='1' 
+            class='fl programSelect' 
+            bind:scrollChildrenMore="refreshListData"
+            bind:endSelect="onSupplierItem">
+          </select>
+        </view>
+      </view>
+      <view class='fl text_333333 text_ellipsis flex vertical_center'><text class='fl margin_l10'>方案：</text> 
+        <select 
+          parent-array='{{programme.category.list}}' 
+          prop-array='{{programme.list}}' 
+          parentIndex= '{{parentIndex}}'
+          propIndex= '{{propIndex}}'
+          selectType='2' 
+          class='fl programSelect' 
+          bind:scrollChildrenMore="refreshListData"
+          bind:scrollParentMore="refreshListData"
+          bind:fristSelect="onCategoryItem" 
+          bind:endSelect="onProgrammeItem">
+        </select>
+      </view>
+      <view class='fr text_41a0fe' bindtap='bindToClassify' wx:if="{{task.list[task.index].status == 0 || task.list[task.index].status == 3}}">整理归类</view>
+    </view>
+    <view class='cneterContainerBox'>
+
+      <view class='table shadow_e2e2e2'>
+        <view class='tr tableHead'>
+          <view class='th indexWidth'>序号</view>
+          <view class='th width_150rpx'>品种</view>
+          <view class='th width_150rpx'>标记</view>
+          <view class='th width_150rpx'>方式</view>
+          <view class='th width_150rpx'>实重</view>
+        </view>
+        <scroll-view scroll-y class='tableListScroll' bindscrolltolower='refreshListData' data-scroll='taskItemData' style='height:{{tableTrListHeight}}'>
+          <nodata wx:if="{{task.noData}}"></nodata>
+          <view class='tr' wx:for="{{task.itemData}}" wx:key="key">
+            <view class='td index indexWidth'>{{index+1}}</view>
+            <view class='td width_150rpx'>{{item.categoryName}}</view>
+            <view class='td width_150rpx'>{{item.marker}}</view>
+            <view class='td width_150rpx' wx:if="{{item.mode == '1'}}">去皮</view>
+            <view class='td width_150rpx' wx:elif="{{item.mode == '2'}}">包</view>
+            <view class='td width_150rpx' wx:else>{{item.mode}}</view>
+            <view class='td width_150rpx'>{{item.weight}}</view>
+          </view>
+        </scroll-view>
+      </view>
+
+    </view>
+  </view>
+  <view class='height_50 loadingBox flex vertical_center'>
+    <list-loadindg isShow="{{isShow}}"></list-loadindg>
+  </view>
+  
+  <view class='footerBox margin_lr30 clearfix'>
+    <view class='alertNumber text_right fs_24 text_333333'>预警：{{task.warnNumber}}箱</view>
+    <view class='clearfix text_fff text_center fs_28 btnUloadingEnd'>
+      <view class='broder_radius6 btn_wechat' bindtap='bindToDisburdenFinish' wx:if="{{task.list[task.index].status == 0 || task.list[task.index].status == 3}}">卸货结束</view>
+    </view>
+  </view>
+
+</view>

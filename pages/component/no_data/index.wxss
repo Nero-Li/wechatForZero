@@ -1,0 +1,5 @@
+/* pages/component/no_data/index.wxss */
+@import '../../common/global.wxss';
+.noDataBox view{
+  margin-top: 40rpx;
+}

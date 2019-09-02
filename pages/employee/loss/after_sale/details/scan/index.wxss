@@ -1,0 +1,47 @@
+/* pages/employee/loss/after_sale/details/scan/index.wxss */
+@import "../../../../../common/global.wxss";
+
+.qrcodeBox{
+ border: 1rpx solid #5a9b41;
+ padding: 15rpx;
+ position: relative;
+ width: 180px;
+ height: 180px;
+ margin: auto;
+}
+.borderLeftTop{
+  position: absolute;
+  left: -8rpx;top: -8rpx;
+  border-top: 8rpx solid #5a9b41;
+  border-left: 8rpx solid #5a9b41;
+  padding: 16rpx;
+  width: 34rpx;
+  height: 30rpx;
+}
+.borderRightTop{
+  position: absolute;
+  right: -8rpx;top: -8rpx;
+  border-top: 8rpx solid #5a9b41;
+  border-right: 8rpx solid #5a9b41;
+  padding: 16rpx;
+  width: 34rpx;
+  height: 30rpx;
+}
+.borderLeftBottom{
+  position: absolute;
+  left: -8rpx;bottom: -8rpx;
+  border-bottom: 8rpx solid #5a9b41;
+  border-left: 8rpx solid #5a9b41;
+  padding: 16rpx;
+  width: 34rpx;
+  height: 30rpx;
+}
+.borderRightBottom{
+  position: absolute;
+  right: -8rpx;bottom: -8rpx;
+  border-bottom: 8rpx solid #5a9b41;
+  border-right: 8rpx solid #5a9b41;
+  padding: 16rpx;
+  width: 34rpx;
+  height: 30rpx;
+}
